@@ -6,7 +6,7 @@ import ThemeToggle from "../theme-toggle";
 
 const Navbar = () => {
   return (
-    <nav className="h-16 bg-background border-b border-accent">
+    <nav className="sticky top-0 z-50 h-16 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6">
         <Logo />
 
@@ -15,10 +15,12 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button variant="outline" className="hidden sm:inline-flex">
-            Sign In
+          <Button variant="outline" className="hidden sm:inline-flex" asChild>
+            <a href="tel:0756812255">Contact</a>
           </Button>
-          <Button className="hidden xs:inline-flex">Get Started</Button>
+          <Button className="hidden xs:inline-flex" asChild>
+            <a href="tel:0756812255">Réserver</a>
+          </Button>
 
           {/* Mobile Menu */}
           <div className="md:hidden">

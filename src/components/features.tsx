@@ -26,32 +26,32 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 lg:py-24 bg-accent/30">
+    <section id="features" className="py-12 lg:py-16 bg-accent/30">
       <div className="max-w-screen-xl mx-auto px-6">
-        <div className="bg-background border-2 border-border rounded-2xl p-8 lg:p-12">
-          <div className="space-y-16">
+        <div className="bg-background border-2 border-border rounded-2xl p-6 lg:p-8">
+          <div className="space-y-12">
             <div className="space-y-4 text-center">
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                 Nos services
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-14 text-muted-foreground max-w-2xl mx-auto">
                 Une gamme complète de services professionnels pour accompagner vos projets musicaux
               </p>
             </div>
             
             <div className="max-w-4xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-4">
+              <Accordion type="single" collapsible className="space-y-3">
                 {services.map((service, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-accent/30 border border-border rounded-xl px-6"
+                    className="bg-accent/30 border border-border rounded-xl px-4"
                   >
-                    <AccordionTrigger className="text-left text-lg font-semibold py-6 hover:no-underline">
+                    <AccordionTrigger className="text-left text-base font-semibold py-4 hover:no-underline">
                       {service.title}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-6">
-                      <p className="text-muted-foreground leading-relaxed">
+                    <AccordionContent className="pb-4">
+                      <p className="text-14 text-muted-foreground leading-relaxed">
                         {service.content}
                       </p>
                     </AccordionContent>

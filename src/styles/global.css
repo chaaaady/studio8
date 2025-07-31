@@ -299,6 +299,11 @@
 }
 
 @layer utilities {
+  .text-14 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
   .bg-background {
     background-color: hsl(var(--background));
   }
