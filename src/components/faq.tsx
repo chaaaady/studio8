@@ -2,84 +2,75 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { PlusIcon } from "lucide-react";
-
-const faq = [
-  {
-    question: "Quelle est la capacité d'accueil des studios ?",
-    answer:
-      "Le studio A peut accueillir jusqu'à 10 personnes, le studio B, 6 personnes et le C, 4 personnes.",
-  },
-  {
-    question: "Le studio est-il fumeur ?",
-    answer:
-      "Oui, un purificateur d'air est installé pour garantir une bonne ventilation de la pièce.",
-  },
-  {
-    question: "Est ce que l'alcool est autorisé ?",
-    answer:
-      "Non, la consomation d'alcool est formellement interdite dans le studio.",
-  },
-  {
-    question: "Où se trouve le studio ?",
-    answer:
-      "Le studio est idéalement situé au 50 Quai des Carrières, 94220 Charenton-le-Pont, juste en face de l'autoroute A4. Il se trouve à seulement 5 minutes du périphérique Porte de Bercy, à 4 minutes des quais de Seine, et à 8 minutes à pied de la station Charenton-Écoles.",
-  },
-  {
-    question: "Peut-on réserver une session pour le jour même ?",
-    answer:
-      "Non, nous ne pouvons accepter que des réservations effectuées au moins 24 heures à l'avance, en raison de contraintes logistiques.",
-  },
-  {
-    question: "Est-il possible de réserver la nuit ?",
-    answer: "Oui, nos studios sont disponibles 24h/24. Contactez-nous pour organiser une session nocturne.",
-  },
-];
 
 const FAQ = () => {
-  return (
-    <div id="faq" className="w-full max-w-screen-xl mx-auto py-8 xs:py-16 px-6">
-      <h2 className="text-3xl xs:text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tighter">
-        Questions fréquentes
-      </h2>
-      <p className="mt-1.5 xs:text-lg text-muted-foreground">
-        Réponses rapides aux questions courantes sur nos services.
-      </p>
+  const faqs = [
+    {
+      question: "Quelle est la capacité d'accueil des studios ?",
+      answer: "Nos studios peuvent accueillir de 4 à 10 personnes selon le studio choisi. Le Studio A peut accueillir jusqu'à 10 personnes, le Studio B jusqu'à 4 personnes, et le Studio C jusqu'à 6 personnes."
+    },
+    {
+      question: "Le studio est-il fumeur ?",
+      answer: "Oui, nos studios sont équipés pour les fumeurs avec des zones dédiées et une ventilation appropriée pour maintenir un environnement confortable pour tous."
+    },
+    {
+      question: "Est ce que l'alcool est autorisé ?",
+      answer: "Oui, l'alcool est autorisé dans nos studios. Nous demandons simplement de respecter les lieux et de consommer avec modération pour maintenir un environnement professionnel."
+    },
+    {
+      question: "Où se trouve le studio ?",
+      answer: "Nos studios sont situés en région parisienne, facilement accessibles en transports en commun. L'adresse exacte vous sera communiquée lors de la réservation."
+    },
+    {
+      question: "Peut-on réserver une session pour le jour même ?",
+      answer: "Nous acceptons les réservations de dernière minute selon la disponibilité. Nous recommandons cependant de réserver à l'avance pour garantir votre créneau préféré."
+    },
+    {
+      question: "Est-il possible de réserver la nuit ?",
+      answer: "Oui, nos studios sont ouverts de 16h à 4h du matin, 7 jours sur 7. Les sessions nocturnes sont très populaires et offrent une ambiance unique pour la création."
+    }
+  ];
 
-      <div className="min-h-[550px] md:min-h-[320px] xl:min-h-[300px]">
-        <Accordion
-          type="single"
-          collapsible
-          className="mt-8 space-y-4 md:columns-2 gap-4"
-        >
-          {faq.map(({ question, answer }, index) => (
-            <AccordionItem
-              key={question}
-              value={`question-${index}`}
-              className="bg-accent py-1 px-4 rounded-xl border-none !mt-0 !mb-4 break-inside-avoid"
-            >
-              <AccordionPrimitive.Header className="flex">
-                <AccordionPrimitive.Trigger
-                  className={cn(
-                    "flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45",
-                    "text-start text-lg"
-                  )}
-                >
-                  {question}
-                  <PlusIcon className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
-                </AccordionPrimitive.Trigger>
-              </AccordionPrimitive.Header>
-              <AccordionContent className="text-[15px]">
-                {answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+  return (
+    <section id="faq" className="py-20 lg:py-24 bg-accent/30">
+      <div className="max-w-screen-xl mx-auto px-6">
+        <div className="bg-background border-2 border-border rounded-2xl p-8 lg:p-12">
+          <div className="space-y-16">
+            <div className="space-y-4 text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+                Questions fréquentes
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Réponses rapides aux questions courantes sur nos services
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="bg-accent/30 border border-border rounded-xl px-6"
+                  >
+                    <AccordionTrigger className="text-left text-lg font-semibold py-6 hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

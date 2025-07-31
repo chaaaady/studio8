@@ -1,131 +1,205 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
-import { CircleCheck } from "lucide-react";
-
-const studioPlans = [
-  {
-    name: "STUDIO A",
-    price: "35€/H",
-    description: "2h minimum",
-    features: ["40 m²", "Jusqu'à 10 personnes", "Ingénieur son inclus"],
-    isPopular: true,
-  },
-  {
-    name: "STUDIO B",
-    price: "35€/H",
-    description: "2h minimum",
-    features: ["20 m²", "Jusqu'à 4 personnes", "Ingénieur son inclus"],
-    isPopular: true,
-  },
-  {
-    name: "STUDIO C",
-    price: "30€/H",
-    description: "2h minimum",
-    features: ["25 m²", "Jusqu'à 6 personnes", "Ingénieur son inclus"],
-  },
-  {
-    name: "STUDIO D - BEATMAKING",
-    price: "20€/H",
-    description: "5h minimum",
-    features: ["Poste de travail dédié", "Accès aux équipements", "Idéal pour la production"],
-  },
-];
-
-const otherServices = [
-    {
-        name: "MIX-MASTERING",
-        price: "145€ / TITRE",
-        description: "Qualité professionnelle prête à la diffusion.",
-        features: ["Mix des voix", "Ajout d'effets", "Mastering pro"],
-        isPopular: true,
-    },
-    {
-        name: "LOCK OUT",
-        price: "100€ / H",
-        description: "Privatisation complète des 3 studios (+100m²).",
-        features: ["Accès illimité aux studios", "Jusqu'à 25 personnes"],
-    },
-    {
-        name: "SÉMINAIRE",
-        price: "",
-        description: "Création d'albums avec beatmakers & ingés – location semaine (4 studios dédiés).",
-        buttonText: "Réserver",
-        features: ["4 studios dédiés", "Beatmakers & ingénieurs inclus"],
-    },
-    {
-        name: "RÉSERVATIONS SANS INGÉNIEUR SON",
-        price: "",
-        description: "Tarifs sans ingénieur son disponibles.",
-        buttonText: "Découvrir les tarifs",
-        features: ["Autonomie complète", "Accès équipements"],
-    }
-]
+import { Check } from "lucide-react";
 
 const Pricing = () => {
-  return (
-    <div id="pricing" className="max-w-screen-xl mx-auto py-12 xs:py-16 px-6">
-      <h2 className="text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">
-        Tarifs studios
-      </h2>
-      <p className="mt-2 text-muted-foreground text-lg">Horaire 16h-4h du matin, 7&nbsp;jours sur&nbsp;7</p>
-      <div className="mt-8 xs:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start gap-8">
-        {studioPlans.map((plan) => (
-          <PricingCard key={plan.name} {...plan} />
-        ))}
-      </div>
+  const studioPlans = [
+    {
+      name: "STUDIO A",
+      price: "35€/H",
+      description: "2h minimum",
+      popular: true,
+      features: ["40 m²", "Jusqu'à 10 personnes", "Ingénieur son inclus"]
+    },
+    {
+      name: "STUDIO B",
+      price: "35€/H",
+      description: "2h minimum",
+      popular: true,
+      features: ["40 m²", "Jusqu'à 10 personnes", "Ingénieur son inclus"]
+    },
+    {
+      name: "STUDIO C",
+      price: "30€/H",
+      description: "2h minimum",
+      popular: false,
+      features: ["25 m²", "Jusqu'à 6 personnes", "Ingénieur son inclus"]
+    },
+    {
+      name: "STUDIO D - BEATMAKING",
+      price: "20€/H",
+      description: "5h minimum",
+      popular: false,
+      features: ["Poste de travail dédié", "Accès aux équipements", "Idéal pour la production"]
+    }
+  ];
 
-      <h2 className="mt-16 xs:mt-24 text-3xl xs:text-4xl md:text-5xl font-bold tracking-tight">
-        Autres prestations
-      </h2>
-      <div className="mt-8 xs:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start gap-8">
-        {otherServices.map((plan) => (
-          <PricingCard key={plan.name} {...plan} />
-        ))}
+  const additionalServices = [
+    {
+      name: "MIX-MASTERING",
+      price: "145€ / TITRE",
+      description: "Qualité professionnelle prête à la diffusion.",
+      popular: true,
+      features: ["Mix des voix", "Ajout d'effets", "Mastering pro"]
+    },
+    {
+      name: "LOCK OUT",
+      price: "100€ / H",
+      description: "Privatisation complète des 3 studios (+100m²).",
+      popular: false,
+      features: ["Accès illimité aux studios", "Jusqu'à 25 personnes"]
+    },
+    {
+      name: "SÉMINAIRE",
+      price: "Sur demande",
+      description: "Création d'albums avec beatmakers & ingés – location semaine (4 studios dédiés).",
+      popular: false,
+      features: ["4 studios dédiés", "Beatmakers & ingénieurs inclus"]
+    },
+    {
+      name: "RÉSERVATIONS SANS INGÉNIEUR SON",
+      price: "Voir Grille tarifaire",
+      description: "Tarifs sans ingénieur son disponibles.",
+      popular: false,
+      features: ["Autonomie complète", "Accès équipements"]
+    }
+  ];
+
+  return (
+    <section id="pricing" className="py-20 lg:py-24">
+      <div className="max-w-screen-xl mx-auto px-6">
+        <div className="bg-background border-2 border-border rounded-2xl p-8 lg:p-12">
+          <div className="space-y-20">
+            {/* Studios */}
+            <div className="space-y-16">
+              <div className="space-y-4 text-center">
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+                  Tarifs studios
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Horaire 16h-4h du matin, 7 jours sur 7
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {studioPlans.map((plan, index) => (
+                  <div 
+                    key={index}
+                    className={`relative p-8 rounded-2xl border-2 h-full flex flex-col ${
+                      plan.popular 
+                        ? 'bg-accent/30 border-primary' 
+                        : 'bg-accent/30 border-border'
+                    }`}
+                  >
+                    {plan.popular && (
+                      <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground border-0 px-4 py-1">
+                        Populaire
+                      </Badge>
+                    )}
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {plan.name}
+                      </h3>
+                      <div className="space-y-1">
+                        <p className="text-3xl font-bold text-foreground">
+                          {plan.price}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {plan.description}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <Separator className="my-6" />
+                    
+                    <ul className="space-y-3 flex-1">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <Check className="h-4 w-4 mt-1 text-foreground flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Button className="w-full mt-8 rounded-xl font-medium" asChild>
+                      <a href="tel:0756812255">
+                        RÉSERVER
+                      </a>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Autres prestations */}
+            <div className="space-y-16">
+              <div className="space-y-4 text-center">
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+                  Autres prestations
+                </h2>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {additionalServices.map((service, index) => (
+                  <div 
+                    key={index}
+                    className={`relative p-8 rounded-2xl border-2 h-full flex flex-col ${
+                      service.popular 
+                        ? 'bg-accent/30 border-primary' 
+                        : 'bg-accent/30 border-border'
+                    }`}
+                  >
+                    {service.popular && (
+                      <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground border-0 px-4 py-1">
+                        Populaire
+                      </Badge>
+                    )}
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {service.name}
+                      </h3>
+                      <div className="space-y-1">
+                        <p className="text-3xl font-bold text-foreground">
+                          {service.price}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <Separator className="my-6" />
+                    
+                    <ul className="space-y-3 flex-1">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <Check className="h-4 w-4 mt-1 text-foreground flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Button className="w-full mt-8 rounded-xl font-medium" asChild>
+                      <a href="tel:0756812255">
+                        RÉSERVER
+                      </a>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
-
-const PricingCard = ({ name, price, description, features, isPopular, buttonText }: any) => (
-  <div
-    className={cn(
-      "relative bg-accent/50 border p-7 rounded-xl h-full flex flex-col",
-      { "bg-background border-[2px] border-primary": isPopular }
-    )}
-  >
-    {isPopular && (
-      <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
-        Populaire
-      </Badge>
-    )}
-    <h3 className="text-lg font-medium">{name}</h3>
-    {price && (
-      <p className="mt-2 text-4xl font-bold">{price}</p>
-    )}
-    <p className="mt-1 font-medium text-muted-foreground">{description}</p>
-    {features && (
-      <>
-        <Separator className="my-6" />
-        <ul className="space-y-2">
-          {features.map((feature: string) => (
-            <li key={feature} className="flex items-start gap-2">
-              <CircleCheck className="h-4 w-4 mt-1 text-foreground" />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </>
-    )}
-    <Button
-      variant={isPopular ? "default" : "secondary"}
-      size="lg"
-      className="w-full mt-8 rounded-full bg-foreground text-background hover:bg-foreground/90"
-    >
-      {buttonText || "RÉSERVER"}
-    </Button>
-  </div>
-);
 
 export default Pricing;
