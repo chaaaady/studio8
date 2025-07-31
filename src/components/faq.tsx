@@ -34,7 +34,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-12 lg:py-16 bg-accent/30">
+    <section id="faq" className="py-12 lg:py-16 bg-accent/50">
       <div className="max-w-screen-xl mx-auto px-6">
         <div className="bg-background border-2 border-border rounded-2xl p-6 lg:p-8">
           <div className="space-y-12">
@@ -42,7 +42,7 @@ const FAQ = () => {
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                 Questions fréquentes
               </h2>
-              <p className="text-14 text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-16 text-muted-foreground max-w-2xl mx-auto">
                 Réponses rapides aux questions courantes sur nos services
               </p>
             </div>
@@ -59,7 +59,7 @@ const FAQ = () => {
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="pb-4">
-                      <p className="text-14 text-muted-foreground leading-relaxed">
+                      <p className="text-16 text-muted-foreground leading-relaxed">
                         {faq.answer}
                       </p>
                     </AccordionContent>

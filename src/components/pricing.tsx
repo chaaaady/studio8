@@ -81,7 +81,7 @@ const Pricing = () => {
                 <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                   Tarifs studios
                 </h2>
-                <p className="text-14 text-muted-foreground">
+                <p className="text-16 text-muted-foreground">
                   Horaire 16h-4h du matin, 7 jours sur 7
                 </p>
               </div>
@@ -110,7 +110,7 @@ const Pricing = () => {
                         <p className="text-2xl font-bold text-foreground">
                           {plan.price}
                         </p>
-                        <p className="text-14 text-muted-foreground">
+                        <p className="text-16 text-muted-foreground">
                           {plan.description}
                         </p>
                       </div>
@@ -122,7 +122,7 @@ const Pricing = () => {
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-2">
                           <Check className="h-4 w-4 mt-0.5 text-foreground flex-shrink-0" />
-                          <span className="text-14 text-muted-foreground">
+                          <span className="text-16 text-muted-foreground">
                             {feature}
                           </span>
                         </li>
@@ -171,7 +171,7 @@ const Pricing = () => {
                         <p className="text-2xl font-bold text-foreground">
                           {service.price}
                         </p>
-                        <p className="text-14 text-muted-foreground">
+                        <p className="text-16 text-muted-foreground">
                           {service.description}
                         </p>
                       </div>
@@ -183,7 +183,7 @@ const Pricing = () => {
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-2">
                           <Check className="h-4 w-4 mt-0.5 text-foreground flex-shrink-0" />
-                          <span className="text-14 text-muted-foreground">
+                          <span className="text-16 text-muted-foreground">
                             {feature}
                           </span>
                         </li>

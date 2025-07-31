@@ -2,7 +2,7 @@ import { Logo } from "./navbar/logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-accent/30 border-t border-border">
+    <footer className="bg-[#111111] border-t border-border">
       <div className="max-w-screen-xl mx-auto px-6">
         {/* Main Footer */}
         <div className="py-16">
@@ -11,8 +11,35 @@ const Footer = () => {
             <div className="space-y-6">
               <Logo />
               <p className="text-muted-foreground leading-relaxed">
-                Fondé par les frères Emara, producteurs multi-certifiés.
+                Fondé par les frères Emara, producteurs multi-certifiés et reconnus dans l'industrie musicale.
               </p>
+            </div>
+            
+            {/* Contact */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-semibold text-foreground">
+                Contact
+              </h4>
+              <ul className="space-y-4">
+                <li>
+                  <a 
+                    href="tel:0756812255" 
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    07 56 81 22 55
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://wa.me/33756812255" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                </li>
+              </ul>
             </div>
             
             {/* Navigation */}
@@ -39,33 +66,6 @@ const Footer = () => {
                 <li>
                   <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
                     FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Contact */}
-            <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-foreground">
-                Contact
-              </h4>
-              <ul className="space-y-4">
-                <li>
-                  <a 
-                    href="tel:0756812255" 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    07 56 81 22 55
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://wa.me/33756812255" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    WhatsApp
                   </a>
                 </li>
               </ul>

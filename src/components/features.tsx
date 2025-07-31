@@ -8,19 +8,19 @@ import {
 const Features = () => {
   const services = [
     {
-      title: "ENREGISTREMENT",
+      title: "Enregistrement",
       content: "Nos studios sont équipés des dernières technologies pour garantir une qualité d'enregistrement professionnelle. Microphones de studio, préamplis haut de gamme et acoustique optimisée."
     },
     {
-      title: "MIX/MASTERING",
+      title: "Mix/Mastering",
       content: "Notre équipe d'ingénieurs son expérimentés assure un mix et mastering de qualité professionnelle, prêt pour la diffusion sur toutes les plateformes."
     },
     {
-      title: "PRODUCTION",
+      title: "Production",
       content: "Accompagnement complet dans la création de vos projets musicaux, de la composition à la finalisation, avec des producteurs reconnus."
     },
     {
-      title: "DIRECTION ARTISTIQUE",
+      title: "Direction artistique",
       content: "Conseils et accompagnement personnalisé pour définir votre identité artistique et développer votre projet musical de manière cohérente."
     }
   ];
@@ -34,7 +34,7 @@ const Features = () => {
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                 Nos services
               </h2>
-              <p className="text-14 text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-16 text-muted-foreground max-w-2xl mx-auto">
                 Une gamme complète de services professionnels pour accompagner vos projets musicaux
               </p>
             </div>
@@ -51,7 +51,7 @@ const Features = () => {
                       {service.title}
                     </AccordionTrigger>
                     <AccordionContent className="pb-4">
-                      <p className="text-14 text-muted-foreground leading-relaxed">
+                      <p className="text-16 text-muted-foreground leading-relaxed">
                         {service.content}
                       </p>
                     </AccordionContent>
