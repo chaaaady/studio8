@@ -73,11 +73,11 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-12 lg:py-16">
       <div className="max-w-screen-xl mx-auto px-6">
-        <div className="bg-background border-2 border-border rounded-2xl p-6 lg:p-8">
+        <div className="bg-background border-2 border-border lg:border-2 lg:border-border border-0 rounded-2xl p-6 lg:p-8 shadow-lg lg:shadow-none animate-in slide-in-from-bottom-4 duration-700">
           <div className="space-y-16">
             {/* Studios */}
             <div className="space-y-12">
-              <div className="space-y-4 text-center">
+              <div className="space-y-4 text-center animate-in slide-in-from-bottom-4 duration-700 delay-200">
                 <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                   Tarifs studios
                 </h2>
@@ -90,10 +90,10 @@ const Pricing = () => {
                 {studioPlans.map((plan, index) => (
                   <div 
                     key={index}
-                    className={`relative p-6 rounded-2xl border-2 h-full flex flex-col ${
+                    className={`relative p-6 rounded-2xl border-2 lg:border-2 border-0 h-full flex flex-col shadow-lg lg:shadow-none transition-all duration-300 hover:scale-105 hover:shadow-xl ${
                       plan.popular 
-                        ? 'bg-accent/30 border-primary' 
-                        : 'bg-accent/30 border-border'
+                        ? 'bg-accent/30 lg:border-primary lg:border-border' 
+                        : 'bg-accent/30 lg:border-border'
                     }`}
                   >
                     {plan.popular && (
@@ -129,7 +129,7 @@ const Pricing = () => {
                       ))}
                     </ul>
                     
-                    <Button className="w-full mt-6 rounded-xl font-medium" asChild>
+                    <Button className="w-full mt-6 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg" asChild>
                       <a href="tel:0756812255">
                         RÉSERVER
                       </a>
@@ -141,7 +141,7 @@ const Pricing = () => {
 
             {/* Autres prestations */}
             <div className="space-y-12">
-              <div className="space-y-4 text-center">
+              <div className="space-y-4 text-center animate-in slide-in-from-bottom-4 duration-700 delay-200">
                 <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                   Autres prestations
                 </h2>
@@ -149,14 +149,14 @@ const Pricing = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {additionalServices.map((service, index) => (
-                  <div 
-                    key={index}
-                    className={`relative p-6 rounded-2xl border-2 h-full flex flex-col ${
-                      service.popular 
-                        ? 'bg-accent/30 border-primary' 
-                        : 'bg-accent/30 border-border'
-                    }`}
-                  >
+                                                <div
+                                key={index}
+                                className={`relative p-6 rounded-2xl border-2 lg:border-2 border-0 h-full flex flex-col shadow-lg lg:shadow-none ${
+                                  service.popular
+                                    ? 'bg-accent/30 lg:border-primary'
+                                    : 'bg-accent/30 lg:border-border'
+                                }`}
+                              >
                     {service.popular && (
                       <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground border-0 px-4 py-1">
                         Populaire

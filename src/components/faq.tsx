@@ -36,9 +36,9 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-12 lg:py-16 bg-accent/50">
       <div className="max-w-screen-xl mx-auto px-6">
-        <div className="bg-background border-2 border-border rounded-2xl p-6 lg:p-8">
+        <div className="bg-background border-2 border-border lg:border-2 lg:border-border border-0 rounded-2xl p-6 lg:p-8 shadow-lg lg:shadow-none animate-in slide-in-from-bottom-4 duration-700">
           <div className="space-y-12">
-            <div className="space-y-4 text-center">
+                                    <div className="space-y-4 text-center animate-in slide-in-from-bottom-4 duration-700 delay-200">
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                 Questions fréquentes
               </h2>
@@ -47,14 +47,14 @@ const FAQ = () => {
               </p>
             </div>
             
-            <div className="max-w-4xl mx-auto">
+                                    <div className="max-w-4xl mx-auto animate-in slide-in-from-bottom-4 duration-700 delay-400">
               <Accordion type="single" collapsible className="space-y-3">
                 {faqs.map((faq, index) => (
-                  <AccordionItem 
-                    key={index} 
-                    value={`item-${index}`}
-                    className="bg-accent/30 border border-border rounded-xl px-4"
-                  >
+                                                <AccordionItem
+                                key={index}
+                                value={`item-${index}`}
+                                className="bg-accent/30 border border-border lg:border rounded-xl px-4 shadow-md lg:shadow-none transition-all duration-300 hover:shadow-lg"
+                              >
                     <AccordionTrigger className="text-left text-base font-semibold py-4 hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
