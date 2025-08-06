@@ -12,10 +12,12 @@ const { title, description = "Modern landing page built with Astro and shadcn/ui
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
     <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1C1C1E" media="(prefers-color-scheme: dark)" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     
@@ -39,6 +41,50 @@ const { title, description = "Modern landing page built with Astro and shadcn/ui
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
         }
+      })();
+    </script>
+    
+    <script is:inline>
+      // Gestion de la zone de notch pour iPhone
+      (function() {
+        function updateNotchArea() {
+          const notchArea = document.querySelector('.today-notch-area');
+          if (notchArea) {
+            const safeAreaTop = getComputedStyle(document.documentElement)
+              .getPropertyValue('--sat') || 'env(safe-area-inset-top, 0px)';
+            
+            // Détection automatique de la hauteur du notch
+            let notchHeight = 0;
+            
+            // iPhone X et plus récents (hauteur approximative)
+            if (window.innerWidth >= 375 && window.innerWidth <= 428 && window.innerHeight >= 812) {
+              notchHeight = 47;
+            }
+            // iPhone SE et plus petits
+            else if (window.innerWidth <= 374) {
+              notchHeight = 20;
+            }
+            // Autres appareils
+            else {
+              notchHeight = parseInt(safeAreaTop) || 0;
+            }
+            
+            notchArea.style.height = notchHeight + 'px';
+            
+            // Ajuster le padding du header
+            const header = document.querySelector('.today-header');
+            if (header) {
+              header.style.paddingTop = Math.max(16, notchHeight) + 'px';
+            }
+          }
+        }
+        
+        // Mise à jour au chargement et au redimensionnement
+        updateNotchArea();
+        window.addEventListener('resize', updateNotchArea);
+        window.addEventListener('orientationchange', function() {
+          setTimeout(updateNotchArea, 100);
+        });
       })();
     </script>
   </head>

@@ -1,0 +1,147 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    // ===== QUALITÉ DU CODE =====
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    
+    // ===== BONNES PRATIQUES =====
+    "prefer-const": "error",
+    "no-var": "error",
+    "no-undef": "error",
+    "no-redeclare": "error",
+    "no-unreachable": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "warn",
+    "no-extra-semi": "error",
+    "no-irregular-whitespace": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "no-trailing-spaces": "error",
+    
+    // ===== SÉCURITÉ =====
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-script-url": "error",
+    
+    // ===== PERFORMANCE =====
+    "no-loop-func": "error",
+    "no-new-object": "error",
+    "no-new-array": "error",
+    
+    // ===== ACCESSIBILITÉ =====
+    "jsx-a11y/alt-text": "off", // Géré par Astro
+    "jsx-a11y/anchor-has-content": "off", // Géré par Astro
+    
+    // ===== STYLE =====
+    "camelcase": ["error", { "properties": "never" }],
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "eol-last": ["error", "always"],
+    "func-call-spacing": ["error", "never"],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never"],
+    "space-before-blocks": "error",
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "space-in-parens": ["error", "never"],
+    "space-infix-ops": "error",
+    "space-unary-ops": ["error", {
+      "words": true,
+      "nonwords": false
+    }],
+    "spaced-comment": ["error", "always"],
+    
+    // ===== COMPLEXITÉ =====
+    "complexity": ["warn", 10],
+    "max-depth": ["warn", 4],
+    "max-len": ["warn", {
+      "code": 100,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "max-lines": ["warn", 300],
+    "max-params": ["warn", 4],
+    
+    // ===== FONCTIONS =====
+    "func-style": ["error", "expression"],
+    "no-param-reassign": "error",
+    "prefer-arrow-callback": "error",
+    "arrow-spacing": "error",
+    "no-confusing-arrow": "error",
+    
+    // ===== VARIABLES =====
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-shadow": "error",
+    "no-unused-expressions": "error",
+    
+    // ===== OBJETS ET ARRAYS =====
+    "object-shorthand": "error",
+    "prefer-template": "error",
+    "template-curly-spacing": "error",
+    "array-callback-return": "error",
+    "prefer-spread": "error",
+    
+    // ===== CONDITIONS =====
+    "eqeqeq": ["error", "always"],
+    "no-eq-null": "error",
+    "curly": ["error", "all"],
+    "no-else-return": "error",
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    
+    // ===== COMMENTS =====
+    "spaced-comment": ["error", "always", {
+      "line": {
+        "markers": ["/"],
+        "exceptions": ["-", "+"]
+      },
+      "block": {
+        "markers": ["!"],
+        "exceptions": ["*"],
+        "balanced": true
+      }
+    }]
+  },
+  "globals": {
+    "window": "readonly",
+    "document": "readonly",
+    "console": "readonly",
+    "navigator": "readonly",
+    "location": "readonly",
+    "history": "readonly",
+    "localStorage": "readonly",
+    "sessionStorage": "readonly",
+    "setTimeout": "readonly",
+    "setInterval": "readonly",
+    "clearTimeout": "readonly",
+    "clearInterval": "readonly",
+    "requestAnimationFrame": "readonly",
+    "cancelAnimationFrame": "readonly",
+    "IntersectionObserver": "readonly",
+    "ResizeObserver": "readonly",
+    "MutationObserver": "readonly"
+  }
+} 

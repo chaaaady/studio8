@@ -1,0 +1,403 @@
+/**
+ * Studio Emara - Component Styles
+ * Animations et styles spécifiques aux composants
+ */
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ===== ANIMATION CLASSES ===== */
+.today-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.today-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.today-animate-stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.today-animate-stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.today-animate-stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.today-animate-stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.today-animate-stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.today-animate-stagger-6 {
+  animation-delay: 0.6s;
+}
+
+.today-animate-stagger-7 {
+  animation-delay: 0.7s;
+}
+
+.animate-marquee-slow {
+  animation: marquee 20s linear infinite;
+}
+
+/* ===== MOBILE MENU ANIMATIONS ===== */
+.today-mobile-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.today-mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.today-burger-menu span {
+  transition: all 0.3s ease;
+}
+
+.today-burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.today-burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.today-burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ===== GALLERY ANIMATIONS ===== */
+.today-gallery-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.today-gallery-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.today-gallery-image {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.today-gallery-overlay.active .today-gallery-image {
+  transform: scale(1);
+}
+
+/* ===== FAQ ANIMATIONS ===== */
+.today-faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.today-faq-item.active .today-faq-content {
+  max-height: 200px;
+}
+
+.today-faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.today-faq-item.active .today-faq-icon {
+  transform: rotate(180deg);
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+.today-button,
+.today-button-black {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.today-button:hover,
+.today-button-black:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.today-button:active,
+.today-button-black:active {
+  transform: translateY(0);
+}
+
+/* ===== CARD ANIMATIONS ===== */
+.today-card,
+.today-studio-featured-card,
+.today-fidelite-card {
+  transition: all 0.3s ease;
+}
+
+.today-card:hover,
+.today-studio-featured-card:hover,
+.today-fidelite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== HERO ANIMATIONS ===== */
+.today-hero-percentage-item {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.today-hero-percentage-item:nth-child(1) { animation-delay: 0.2s; }
+.today-hero-percentage-item:nth-child(2) { animation-delay: 0.4s; }
+.today-hero-percentage-item:nth-child(3) { animation-delay: 0.6s; }
+.today-hero-percentage-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* ===== SCROLL INDICATOR ===== */
+.today-scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== LOADING STATES ===== */
+.today-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.today-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===== RESPONSIVE ANIMATIONS ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.today-gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .today-fade-in,
+  .today-mobile-menu,
+  .today-gallery-overlay,
+  .today-faq-content,
+  .today-button,
+  .today-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ===== FOCUS STATES ===== */
+.today-button:focus,
+.today-button-black:focus,
+.today-studio-expand-button:focus,
+.today-gallery-close:focus,
+.today-gallery-arrow:focus {
+  outline: 2px solid #007AFF;
+  outline-offset: 2px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .today-mobile-menu,
+  .today-gallery-overlay,
+  .today-scroll-indicator,
+  .today-burger-menu {
+    display: none !important;
+  }
+  
+  .today-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ===== NOTCH AREA & BACKGROUND DIVISION ===== */
+/* Zone de notch pour iPhone et autres appareils avec encoche */
+@supports (padding: max(0px)) {
+  .today-page {
+    /* Background principal du site */
+    background: linear-gradient(180deg, 
+      #ffffff 0%, 
+      #ffffff 0px, 
+      #000000 0px, 
+      #000000 100%
+    );
+    background-size: 100% 100%;
+    background-position: 0 0;
+  }
+
+  /* Zone de notch - background blanc */
+  .today-notch-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top, 0px);
+    background: #ffffff;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  /* Header avec background adaptatif */
+  .today-header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Ajustement du contenu principal */
+  .today-hero {
+    margin-top: 0;
+  }
+}
+
+/* Fallback pour les navigateurs qui ne supportent pas env() */
+@supports not (padding: max(0px)) {
+  .today-page {
+    background: #000000;
+  }
+  
+  .today-header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Support spécifique pour iPhone avec notch */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .today-header {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .today-notch-area {
+    height: env(safe-area-inset-top);
+  }
+}
+
+/* Support pour les appareils sans notch */
+@media screen and (max-width: 768px) {
+  .today-header {
+    padding-top: 1rem;
+  }
+  
+  .today-notch-area {
+    height: 0;
+  }
+}
+
+/* Ajustements pour différents appareils */
+/* iPhone X et plus récents */
+@media screen and (min-width: 375px) and (max-width: 428px) and (min-height: 812px) {
+  .today-notch-area {
+    height: 47px; /* Hauteur approximative du notch */
+  }
+}
+
+/* iPhone SE et plus petits */
+@media screen and (max-width: 374px) {
+  .today-notch-area {
+    height: 20px;
+  }
+}
+
+/* Tablettes et desktop */
+@media screen and (min-width: 768px) {
+  .today-notch-area {
+    height: 0;
+  }
+  
+  .today-header {
+    padding-top: 1rem;
+  }
+} 

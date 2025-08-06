@@ -10,7 +10,13 @@
     "astro": "astro",
     "migrate:design-system": "node scripts/migrate-to-design-system.js",
     "migrate:design-system:dry-run": "node scripts/migrate-to-design-system.js --dry-run",
-    "setup:design-system": "npm run migrate:design-system && echo '✅ Design system configuré!'"
+    "setup:design-system": "npm run migrate:design-system && echo '✅ Design system configuré!'",
+    "lint": "eslint public/js/*.js src/**/*.js --fix",
+    "lint:check": "eslint public/js/*.js src/**/*.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "quality": "npm run lint:check && npm run format:check",
+    "quality:fix": "npm run lint && npm run format"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
@@ -25,7 +31,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
   },
   "keywords": [
     "studio",
