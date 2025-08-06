@@ -1,0 +1,742 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Paiement • Studios Emara">
+  <div class="today-page">
+    <!-- Header avec navigation -->
+    <header class="today-header">
+      <div class="today-header-content">
+                                <!-- Logo -->
+                        <div class="today-logo" onclick="window.location.href='/'" style="cursor: pointer;">
+                          <img src="/logo.png" alt="Studio Emara" class="today-logo-image" />
+                          <div class="today-logo-text">
+                            <span class="today-logo-subtitle">STUDIOS</span>
+                            <h1 class="today-logo-title">EMARA</h1>
+                          </div>
+                        </div>
+        
+        <!-- Navigation Desktop -->
+        <nav class="today-nav">
+          <a href="/">Accueil</a>
+          <a href="/#studios">Studios</a>
+          <a href="/#fidelite">Fidélité</a>
+          <a href="/#services">Services</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        
+        <!-- CTA Button -->
+        <button 
+          class="today-button-black today-button-small"
+          onclick="window.location.href='tel:0756812255'"
+        >
+          Réserver
+        </button>
+        
+        <!-- Mobile Menu Button -->
+        <button class="today-burger-menu" id="burger-menu" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="today-mobile-menu" id="mobile-menu">
+      <div class="today-mobile-menu-content">
+        <!-- Bouton fermer unique -->
+        <button class="today-mobile-close" id="mobile-close" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <nav class="today-mobile-nav">
+          <a href="/" onclick="closeMobileMenu()">Accueil</a>
+          <a href="/#studios" onclick="closeMobileMenu()">Studios</a>
+          <a href="/#fidelite" onclick="closeMobileMenu()">Fidélité</a>
+          <a href="/#services" onclick="closeMobileMenu()">Services</a>
+          <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
+        </nav>
+        <button 
+          class="today-button-black today-button-large w-full"
+          onclick="window.location.href='tel:0756812255'; closeMobileMenu()"
+        >
+          Réserver maintenant
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Section Paiement -->
+    <section class="today-hero">
+      <div class="today-hero-bg">
+        <img 
+          src="/hero-bg.jpeg" 
+          alt="Studio Emara Paiement" 
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="today-hero-overlay"></div>
+      
+      <div class="today-hero-content">
+        <div class="today-hero-label">
+          Réservation
+        </div>
+        <h1 class="today-hero-title">
+          Paiement sécurisé
+        </h1>
+        <p class="today-hero-subtitle">
+          Choisissez votre formule et réservez votre session d'enregistrement
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Paiement -->
+    <section class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-1">
+          <div class="today-section-label">
+            Tarifs & Réservation
+          </div>
+          <h2 class="today-section-title">
+            Choisissez votre formule
+          </h2>
+          <p class="today-section-subtitle">
+            Des tarifs transparents et des forfaits adaptés à tous les besoins
+          </p>
+        </div>
+      </div>
+
+      <!-- Services d'enregistrement - Section unifiée -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10 mt-12">
+
+        <!-- Enregistrement avec ingénieur -->
+        <div class="mt-8">
+          <div class="today-card today-animate-stagger-3">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Enregistrement • Avec ingénieur
+              </div>
+              <h4 class="today-card-title">Enregistrement avec ingénieur du son</h4>
+              <p class="today-card-subtitle mb-6">
+                Profitez de l'expertise de nos ingénieurs son professionnels
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Studio A -->
+                <div class="today-card today-animate-stagger-4">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      Studio Premium
+                    </div>
+                    <h5 class="today-card-title">STUDIO A</h5>
+                    <div class="text-2xl font-bold text-black mb-4">35€/h</div>
+                    <p class="today-card-subtitle mb-6">
+                      40 m² • Jusqu'à 10 personnes • Équipement haut de gamme
+                    </p>
+                    <button 
+                      class="today-button-black today-button-large w-full"
+                      onclick="window.location.href='https://buy.stripe.com/00g4jMbOj1aYgY8aEL'"
+                    >
+                      Réserver Studio A
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Studio B -->
+                <div class="today-card today-animate-stagger-4">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      Studio Professionnel
+                    </div>
+                    <h5 class="today-card-title">STUDIO B</h5>
+                    <div class="text-2xl font-bold text-black mb-4">35€/h</div>
+                    <p class="today-card-subtitle mb-6">
+                      40 m² • Jusqu'à 10 personnes • Acoustique optimisée
+                    </p>
+                    <button 
+                      class="today-button-black today-button-large w-full"
+                      onclick="window.location.href='https://buy.stripe.com/00g4jMbOj1aYgY8aEL'"
+                    >
+                      Réserver Studio B
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Studio C -->
+                <div class="today-card today-animate-stagger-4">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      Studio Compact
+                    </div>
+                    <h5 class="today-card-title">STUDIO C</h5>
+                    <div class="text-2xl font-bold text-black mb-4">35€/h</div>
+                    <p class="today-card-subtitle mb-6">
+                      25 m² • Jusqu'à 6 personnes • Intimité garantie
+                    </p>
+                    <button 
+                      class="today-button-black today-button-large w-full"
+                      onclick="window.location.href='https://buy.stripe.com/00g4jMbOj1aYgY8aEL'"
+                    >
+                      Réserver Studio C
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                 <!-- Mix/Mastering -->
+         <div class="mt-8">
+           <div class="today-card today-animate-stagger-5">
+             <div class="today-card-content">
+               <div class="today-card-label">
+                 Post-Production • Mix/Mastering
+               </div>
+               <h4 class="today-card-title">Mix/Mastering</h4>
+               <p class="today-card-subtitle mb-6">
+                 Qualité professionnelle prête à la diffusion
+               </p>
+               
+               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <!-- Mix/Mastering -->
+                 <div class="today-card today-animate-stagger-6">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       Service complet
+                     </div>
+                     <h5 class="today-card-title">MIX/MASTERING</h5>
+                     <div class="text-2xl font-bold text-black mb-4">145€/TITRE</div>
+                     <p class="today-card-subtitle mb-6">
+                       Qualité professionnelle prête à la diffusion
+                     </p>
+                     <button 
+                       class="today-button-black today-button-large w-full"
+                       onclick="window.location.href='https://buy.stripe.com/7sI4jM5pV1aYcHSaEN'"
+                     >
+                       Commander
+                     </button>
+                   </div>
+                 </div>
+                 
+                                   <!-- Mix seul -->
+                  <div class="today-card today-animate-stagger-6">
+                    <div class="today-card-content text-center">
+                      <div class="today-card-label">
+                        Mix uniquement
+                      </div>
+                      <h5 class="today-card-title">MIX</h5>
+                      <div class="text-2xl font-bold text-black mb-4">125€/TITRE</div>
+                      <p class="today-card-subtitle mb-6">
+                        Mixage professionnel de vos enregistrements
+                      </p>
+                      <button 
+                        class="today-button-black today-button-large w-full"
+                        onclick="window.location.href='https://buy.stripe.com/7sI4jM5pV1aYcHSaEN'"
+                      >
+                        Commander
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <!-- Mastering seul -->
+                  <div class="today-card today-animate-stagger-6">
+                    <div class="today-card-content text-center">
+                      <div class="today-card-label">
+                        Mastering uniquement
+                      </div>
+                      <h5 class="today-card-title">MASTERING</h5>
+                      <div class="text-2xl font-bold text-black mb-4">55€/TITRE</div>
+                      <p class="today-card-subtitle mb-6">
+                        Finalisation et optimisation pour la diffusion
+                      </p>
+                      <button 
+                        class="today-button-black today-button-large w-full"
+                        onclick="window.location.href='https://buy.stripe.com/7sI4jM5pV1aYcHSaEN'"
+                      >
+                        Commander
+                      </button>
+                    </div>
+                  </div>
+               </div>
+             </div>
+           </div>
+         </div>
+      </div>
+
+      <!-- Forfaits sans ingénieur - Section unifiée -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10 mt-12">
+        <div class="today-card today-animate-stagger-6">
+          <div class="today-card-content">
+            <div class="today-card-label">
+              Forfaits • Sans ingénieur
+            </div>
+            <h3 class="today-card-title">
+              Forfaits sans ingénieur son
+            </h3>
+            <p class="today-card-subtitle">
+              Tarifs préférentiels pour les sessions sans ingénieur - Groupez vos heures et économisez
+            </p>
+          </div>
+        </div>
+
+        <!-- Studio A Forfaits -->
+        <div class="mt-8">
+          <div class="today-card today-animate-stagger-7">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Studio A • Premium
+              </div>
+              <h4 class="today-card-title">Forfaits Studio A</h4>
+              <p class="today-card-subtitle mb-6">
+                40 m² • Jusqu'à 10 personnes • Équipement haut de gamme
+              </p>
+              
+                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                 <!-- 1H Studio A -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       1 Heure
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">25€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">25€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/4gw17AdWr6vidLWaEP'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 10H Studio A -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       10 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">200€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">20€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/9AQ5nQ3hN5redLW28k'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 20H Studio A -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       20 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">360€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">18€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/eVa8A2cSndXK7ny5kx'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 40H Studio A -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       40 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">600€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">15€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/dR67vY5pVg5SazKfZc'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio B Forfaits -->
+        <div class="mt-8">
+          <div class="today-card today-animate-stagger-7">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Studio B • Professionnel
+              </div>
+              <h4 class="today-card-title">Forfaits Studio B</h4>
+              <p class="today-card-subtitle mb-6">
+                40 m² • Jusqu'à 10 personnes • Acoustique optimisée
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 1H Studio B -->
+                <div class="today-card today-animate-stagger-8">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      1 Heure
+                    </div>
+                    <div class="text-xl font-bold text-black mb-1">25€ HT</div>
+                    <div class="text-xs text-gray-600 mb-3">25€/h</div>
+                    <button 
+                      class="today-button-black today-button-compact w-full"
+                      onclick="window.location.href='https://buy.stripe.com/4gw17AdWr6vidLWaEP'"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 10H Studio B -->
+                <div class="today-card today-animate-stagger-8">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      10 Heures
+                    </div>
+                    <div class="text-xl font-bold text-black mb-1">200€ HT</div>
+                    <div class="text-xs text-gray-600 mb-3">20€/h</div>
+                    <button 
+                      class="today-button-black today-button-compact w-full"
+                      onclick="window.location.href='https://buy.stripe.com/9AQ5nQ3hN5redLW28k'"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 20H Studio B -->
+                <div class="today-card today-animate-stagger-8">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      20 Heures
+                    </div>
+                    <div class="text-xl font-bold text-black mb-1">360€ HT</div>
+                    <div class="text-xs text-gray-600 mb-3">18€/h</div>
+                    <button 
+                      class="today-button-black today-button-compact w-full"
+                      onclick="window.location.href='https://buy.stripe.com/eVa8A2cSndXK7ny5kx'"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 40H Studio B -->
+                <div class="today-card today-animate-stagger-8">
+                  <div class="today-card-content text-center">
+                    <div class="today-card-label">
+                      40 Heures
+                    </div>
+                    <div class="text-xl font-bold text-black mb-1">600€ HT</div>
+                    <div class="text-xs text-gray-600 mb-3">15€/h</div>
+                    <button 
+                      class="today-button-black today-button-compact w-full"
+                      onclick="window.location.href='https://buy.stripe.com/dR67vY5pVg5SazKfZc'"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                 <!-- Studio C Forfaits -->
+         <div class="mt-8">
+           <div class="today-card today-animate-stagger-7">
+             <div class="today-card-content">
+               <div class="today-card-label">
+                 Studio C • Compact
+               </div>
+               <h4 class="today-card-title">Forfaits Studio C</h4>
+               <p class="today-card-subtitle mb-6">
+                 25 m² • Jusqu'à 6 personnes • Intimité garantie
+               </p>
+               
+               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                 <!-- 1H Studio C -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       1 Heure
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">20€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">20€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/5kA2bEaKfcTG23e9AQ'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 10H Studio C -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       10 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">150€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">15€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/3cs17Ag4zf1OfU4aEV'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 20H Studio C -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       20 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">240€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">12€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/14kbMe2dJdXKazK14m'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+
+                 <!-- 40H Studio C -->
+                 <div class="today-card today-animate-stagger-8">
+                   <div class="today-card-content text-center">
+                     <div class="today-card-label">
+                       40 Heures
+                     </div>
+                     <div class="text-xl font-bold text-black mb-1">400€ HT</div>
+                     <div class="text-xs text-gray-600 mb-3">10€/h</div>
+                     <button 
+                       class="today-button-black today-button-compact w-full"
+                       onclick="window.location.href='https://buy.stripe.com/4gw5nQ6tZdXKgY84gz'"
+                     >
+                       Réserver
+                     </button>
+                   </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <!-- Contact Section -->
+    <section class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-card today-animate-stagger-9">
+          <div class="today-card-content text-center">
+            <div class="today-card-label">
+              Contact
+            </div>
+            <h2 class="today-card-title">
+              Besoin d'aide pour votre réservation ?
+            </h2>
+            <p class="today-card-subtitle max-w-[800px] mx-auto mb-8">
+              Notre équipe est disponible pour vous accompagner dans votre projet et répondre à toutes vos questions.
+            </p>
+            
+                                        <div class="flex justify-center items-center">
+                              <button 
+                                class="today-button-black today-button-large"
+                                onclick="window.location.href='tel:0756812255'"
+                              >
+                                Appeler maintenant
+                              </button>
+                            </div>
+            
+            <p class="text-sm text-gray-500 mt-6">
+              📞 07 56 81 22 55 • Disponible 7j/7
+            </p>
+          </div>
+        </div>
+      </div>
+                        </section>
+
+                    <!-- Footer -->
+                    <footer class="today-footer">
+                      <div class="today-footer-content">
+
+                        
+                        <div class="today-footer-section">
+                          <h4 class="today-footer-title">Contact</h4>
+                          <div class="today-footer-list">
+                            <li>50 Quai des Carrières</li>
+                            <li>94220 Charenton-le-Pont</li>
+                            <li>07 56 81 22 55</li>
+                          </div>
+                        </div>
+                        
+                        <div class="today-footer-section">
+                          <h4 class="today-footer-title">Services</h4>
+                          <div class="today-footer-list">
+                            <li>Enregistrement</li>
+                            <li>Mixage & Mastering</li>
+                            <li>Production Musicale</li>
+                          </div>
+                        </div>
+                        
+                        <!-- Desktop only - Legal links -->
+                        <div class="today-footer-section today-footer-legal">
+                          <h4 class="today-footer-title">Informations</h4>
+                          <div class="today-footer-list">
+                            <li><a href="#" class="today-footer-link">Conditions générales</a></li>
+                            <li><a href="#" class="today-footer-link">Mentions légales</a></li>
+                            <li><a href="#" class="today-footer-link">Politique de confidentialité</a></li>
+                            <li><a href="#" class="today-footer-link">CGV</a></li>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="today-footer-bottom">
+                        <p class="today-footer-copyright">
+                          © 2024 Studios Emara. Tous droits réservés.
+                        </p>
+                      </div>
+                    </footer>
+                  </div>
+
+                  <!-- Script pour le menu mobile -->
+  <script>
+    // Script de diagnostic pour le menu mobile
+    console.log('🔍 Début du diagnostic du menu mobile...');
+    
+    // Vérification immédiate des éléments
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('📱 DOM chargé, vérification des éléments...');
+      
+      const burgerMenu = document.getElementById('burger-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.getElementById('mobile-close');
+      
+      console.log('🔍 Éléments trouvés:', {
+        burgerMenu: burgerMenu ? '✅' : '❌',
+        mobileMenu: mobileMenu ? '✅' : '❌',
+        mobileClose: mobileClose ? '✅' : '❌'
+      });
+      
+      if (!burgerMenu || !mobileMenu || !mobileClose) {
+        console.error('❌ Éléments manquants pour le menu mobile');
+        return;
+      }
+      
+      // Test du clic sur le burger menu - CORRIGÉ
+      burgerMenu.addEventListener('click', function(e) {
+        console.log('🍔 Burger menu cliqué!');
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation(); // Empêche la propagation
+        
+        const isActive = mobileMenu.classList.contains('active');
+        console.log('📊 État actuel du menu:', isActive ? 'Ouvert' : 'Fermé');
+        
+        if (isActive) {
+          // Fermer le menu
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+          console.log('🔒 Menu fermé');
+        } else {
+          // Ouvrir le menu
+          mobileMenu.classList.add('active');
+          burgerMenu.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          console.log('🔓 Menu ouvert');
+        }
+        
+        // Vérification après changement
+        console.log('📊 Nouvel état:', mobileMenu.classList.contains('active') ? 'Ouvert' : 'Fermé');
+      });
+      
+      // Test du bouton fermer - CORRIGÉ
+      mobileClose.addEventListener('click', function(e) {
+        console.log('❌ Bouton fermer cliqué!');
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation(); // Empêche la propagation
+        
+        mobileMenu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        console.log('🔒 Menu fermé via bouton X');
+      });
+      
+      // Test du clic en dehors du menu
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          console.log('🖱️ Clic en dehors du menu');
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Test de la touche Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          console.log('⌨️ Touche Escape pressée');
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Fonction globale pour fermer le menu
+      window.closeMobileMenu = function() {
+        console.log('🌐 closeMobileMenu() appelée');
+        mobileMenu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+      
+      console.log('✅ Diagnostic du menu mobile terminé');
+    });
+
+    // Optimisations de performance JavaScript
+    document.addEventListener('DOMContentLoaded', () => {
+      // Intersection Observer optimisé avec throttling
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Optimisation: utiliser querySelectorAll une seule fois
+      const animatedElements = document.querySelectorAll('[class*="today-animate"]');
+      animatedElements.forEach(el => {
+        el.classList.add('today-fade-in');
+        observer.observe(el);
+      });
+    });
+  </script>
+</Layout> 

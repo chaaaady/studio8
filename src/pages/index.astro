@@ -23,6 +23,7 @@ import Layout from '../layouts/Layout.astro';
           <a href="#about">À propos</a>
           <a href="#services">Services</a>
           <a href="#faq">FAQ</a>
+          <a href="/paiement">Paiement</a>
           <a href="#contact">Contact</a>
         </nav>
         
@@ -54,14 +55,15 @@ import Layout from '../layouts/Layout.astro';
           </svg>
         </button>
         
-        <nav class="today-mobile-nav">
-          <a href="#studios" onclick="closeMobileMenu()">Studios</a>
-          <a href="#fidelite" onclick="closeMobileMenu()">Fidélité</a>
-          <a href="#about" onclick="closeMobileMenu()">À propos</a>
-          <a href="#services" onclick="closeMobileMenu()">Services</a>
-          <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-          <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-        </nav>
+                  <nav class="today-mobile-nav">
+            <a href="#studios" onclick="closeMobileMenu()">Studios</a>
+            <a href="#fidelite" onclick="closeMobileMenu()">Fidélité</a>
+            <a href="#about" onclick="closeMobileMenu()">À propos</a>
+            <a href="#services" onclick="closeMobileMenu()">Services</a>
+            <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+            <a href="/paiement" onclick="closeMobileMenu()">Paiement</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+          </nav>
         <button 
           class="today-button-black today-button-large w-full"
           onclick="window.location.href='tel:0756812255'; closeMobileMenu()"
