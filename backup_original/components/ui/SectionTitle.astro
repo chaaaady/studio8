@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  overline?: string;
+  class?: string;
+  alignment?: 'left' | 'center';
+}
+
+const {
+  title,
+  subtitle,
+  overline,
+  class: className = '',
+  alignment = 'left'
+} = Astro.props;
+
+const alignmentClasses = {
+  left: 'text-left',
+  center: 'text-center'
+};
+---
+
+<div class={`section-spacing ${alignmentClasses[alignment]} ${className}`}>
+  {overline && (
+    <p class="text-overline text-gray-500 mb-1">{overline}</p>
+  )}
+  <h2 class="text-headline text-gray-900 mb-2">{title}</h2>
+  {subtitle && (
+    <p class="text-body text-gray-600">{subtitle}</p>
+  )}
+</div>
+
+<style>
+  .section-spacing {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .text-headline {
+    font-size: var(--text-headline);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.29;
+  }
+  
+  .text-overline {
+    font-size: var(--text-overline);
+    font-weight: 600;
+    line-height: 1.36;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+</style>

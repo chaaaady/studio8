@@ -1,0 +1,340 @@
+/* ========================================
+   MAPPING DE MIGRATION - ANCIEN → NOUVEAU
+   ======================================== */
+
+/* ========================================
+   BOUTONS
+   ======================================== */
+
+/* Ancien → Nouveau */
+.today-button-black {
+  @apply ds-btn ds-btn-black ds-btn-md;
+}
+
+.today-button-compact {
+  @apply ds-btn ds-btn-black ds-btn-sm;
+}
+
+.today-button-small {
+  @apply ds-btn ds-btn-black ds-btn-sm;
+}
+
+.today-button-large {
+  @apply ds-btn ds-btn-black ds-btn-lg;
+}
+
+/* ========================================
+   CARTES
+   ======================================== */
+
+.today-card {
+  @apply ds-card;
+}
+
+.today-card-content {
+  @apply ds-card-content;
+}
+
+.today-studio-card {
+  @apply ds-card ds-rounded-lg;
+}
+
+.today-studio-featured-card {
+  @apply ds-card ds-rounded-lg;
+}
+
+.today-artists-marquee {
+  @apply ds-card ds-rounded-lg;
+}
+
+.today-artist-badge {
+  @apply ds-card ds-rounded-lg ds-p-2;
+}
+
+/* ========================================
+   TYPOGRAPHIE
+   ======================================== */
+
+.today-card-title {
+  @apply ds-text-2xl ds-font-bold ds-text-primary;
+}
+
+.today-card-subtitle {
+  @apply ds-text-md ds-text-secondary ds-leading-relaxed;
+}
+
+.today-card-description {
+  @apply ds-text-base ds-text-secondary ds-leading-normal;
+}
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+.today-container {
+  @apply ds-container;
+}
+
+.today-section {
+  @apply ds-section;
+}
+
+.today-section-sm {
+  @apply ds-section-sm;
+}
+
+.today-section-lg {
+  @apply ds-section-lg;
+}
+
+/* ========================================
+   EFFETS
+   ======================================== */
+
+.today-glass {
+  @apply ds-glass;
+}
+
+.today-glass-dark {
+  @apply ds-glass-dark;
+}
+
+.today-blur {
+  @apply ds-blur-md;
+}
+
+.today-blur-strong {
+  @apply ds-blur-lg;
+}
+
+/* ========================================
+   ESPACEMENT
+   ======================================== */
+
+/* Marges */
+.today-mt-8 {
+  @apply ds-mt-8;
+}
+
+.today-mb-6 {
+  @apply ds-mb-6;
+}
+
+.today-mb-8 {
+  @apply ds-mb-8;
+}
+
+/* Padding */
+.today-p-4 {
+  @apply ds-p-4;
+}
+
+.today-p-6 {
+  @apply ds-p-6;
+}
+
+.today-px-4 {
+  @apply ds-px-4;
+}
+
+.today-px-6 {
+  @apply ds-px-6;
+}
+
+.today-py-4 {
+  @apply ds-py-4;
+}
+
+.today-py-6 {
+  @apply ds-py-6;
+}
+
+.today-py-8 {
+  @apply ds-py-8;
+}
+
+/* ========================================
+   COULEURS
+   ======================================== */
+
+.today-text-primary {
+  @apply ds-text-primary;
+}
+
+.today-text-secondary {
+  @apply ds-text-secondary;
+}
+
+.today-text-inverse {
+  @apply ds-text-inverse;
+}
+
+.today-bg-primary {
+  @apply ds-bg-primary;
+}
+
+.today-bg-card {
+  @apply ds-bg-card;
+}
+
+.today-bg-overlay {
+  @apply ds-bg-overlay;
+}
+
+/* ========================================
+   OMBRES
+   ======================================== */
+
+.today-shadow-card {
+  @apply ds-shadow-card;
+}
+
+.today-shadow-card-hover {
+  @apply ds-shadow-card-hover;
+}
+
+.today-shadow-button {
+  @apply ds-shadow-button;
+}
+
+.today-shadow-gallery {
+  @apply ds-shadow-gallery;
+}
+
+/* ========================================
+   TRANSITIONS
+   ======================================== */
+
+.today-transition {
+  @apply ds-transition;
+}
+
+.today-transition-fast {
+  @apply ds-transition-fast;
+}
+
+.today-transition-slow {
+  @apply ds-transition-slow;
+}
+
+/* ========================================
+   COMPOSANTS SPÉCIFIQUES
+   ======================================== */
+
+/* Header */
+.today-header {
+  @apply ds-glass ds-blur-md ds-border ds-border-light;
+}
+
+/* Mobile menu */
+.today-mobile-menu {
+  @apply ds-bg-overlay ds-blur-2xl;
+}
+
+.today-mobile-menu-content {
+  @apply ds-glass-dark ds-blur-lg ds-border ds-border-inverse;
+}
+
+.today-mobile-close {
+  @apply ds-btn ds-btn-secondary ds-rounded-full ds-p-2;
+}
+
+.today-burger-menu {
+  @apply ds-btn ds-btn-secondary ds-rounded-lg ds-p-2;
+}
+
+/* Gallery */
+.today-gallery-overlay {
+  @apply ds-bg-overlay ds-blur-lg;
+}
+
+.today-gallery-image {
+  @apply ds-rounded-lg ds-shadow-gallery;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.today-animate-stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.today-animate-stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.today-animate-stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.today-animate-stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* ========================================
+   UTILITAIRES RESPONSIVE
+   ======================================== */
+
+@media (min-width: 640px) {
+  .today-container {
+    @apply ds-container;
+  }
+}
+
+@media (min-width: 1024px) {
+  .today-container {
+    @apply ds-container;
+  }
+}
+
+@media (min-width: 1280px) {
+  .today-container {
+    @apply ds-container;
+  }
+}
+
+/* ========================================
+   MODE SOMBRE
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .today-glass {
+    @apply ds-glass-dark;
+  }
+  
+  .today-text-primary {
+    @apply ds-text-primary;
+  }
+  
+  .today-text-secondary {
+    @apply ds-text-secondary;
+  }
+  
+  .today-bg-primary {
+    @apply ds-bg-primary;
+  }
+  
+  .today-bg-card {
+    @apply ds-bg-card;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITÉ
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .today-transition,
+  .today-transition-fast,
+  .today-transition-slow {
+    @apply ds-transition-none;
+  }
+  
+  .today-animate-stagger-1,
+  .today-animate-stagger-2,
+  .today-animate-stagger-3,
+  .today-animate-stagger-4 {
+    animation-delay: 0s;
+  }
+} 

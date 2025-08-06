@@ -1,0 +1,77 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'default' | 'large';
+  href?: string;
+  onclick?: string;
+  class?: string;
+}
+
+const { 
+  variant = 'primary', 
+  size = 'default',
+  href,
+  onclick,
+  class: className = '',
+  ...props 
+} = Astro.props;
+
+const baseClasses = 'btn-appstore inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2';
+
+const variantClasses = {
+  primary: 'btn-appstore',
+  secondary: 'btn-secondary'
+};
+
+const sizeClasses = {
+  default: 'h-9 px-4 text-[15px]',
+  large: 'h-11 px-6 text-base'
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag 
+  class={classes}
+  href={href}
+  onclick={onclick}
+  {...props}
+>
+  <slot />
+</Tag>
+
+<style>
+  .btn-appstore {
+    background: rgba(0, 122, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 18px;
+    color: white;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-appstore:hover {
+    background: rgba(0, 122, 255, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 18px;
+    color: #007aff;
+    border: 1px solid rgba(0, 122, 255, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>

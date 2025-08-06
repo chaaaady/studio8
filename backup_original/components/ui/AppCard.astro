@@ -1,0 +1,190 @@
+---
+import AppButton from './AppButton.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  buttonOnclick?: string;
+  variant?: 'hero' | 'featured' | 'story';
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  imageSrc,
+  imageAlt = title,
+  buttonText = 'En savoir plus',
+  buttonHref,
+  buttonOnclick,
+  variant = 'featured',
+  class: className = ''
+} = Astro.props;
+
+const cardClasses = {
+  hero: 'card-hero aspect-[16/9] relative overflow-hidden',
+  featured: 'card-appstore',
+  story: 'card-appstore flex flex-col'
+};
+---
+
+<div class={`${cardClasses[variant]} ${className}`}>
+  {variant === 'hero' && (
+    <>
+      {/* Image de fond pleine */}
+      <img 
+        src={imageSrc} 
+        alt={imageAlt}
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      
+      {/* Overlay gradient */}
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      
+      {/* Badge de lecture centré */}
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-18 h-18 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center transition-transform duration-200 hover:scale-110">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-black ml-1">
+            <path d="M8 5.14v13.72L19 12L8 5.14z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      
+      {/* Contenu superposé */}
+      <div class="absolute inset-0 flex flex-col justify-end p-6">
+        {subtitle && (
+          <p class="text-overline text-white/90 mb-2">{subtitle}</p>
+        )}
+        <h3 class="text-headline text-white mb-2 max-w-[80%]">{title}</h3>
+        {description && (
+          <p class="text-body text-white/90 mb-4 max-w-[80%]">{description}</p>
+        )}
+      </div>
+      
+      {/* Pied de carte glassmorphism */}
+      <div class="absolute bottom-0 left-0 right-0 h-21 glass-effect border-t border-white/20">
+        <div class="flex items-center justify-between h-full px-6">
+          <div class="flex items-center gap-3">
+            {/* Icône app */}
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+              <span class="text-white font-bold text-2xl">S</span>
+            </div>
+            
+            {/* Infos app */}
+            <div>
+              <p class="text-body font-semibold text-white">{title}</p>
+              <p class="text-caption text-white/70">Studio • Musique</p>
+              <p class="text-overline text-white/70">Services inclus</p>
+            </div>
+          </div>
+          
+          {/* Bouton CTA */}
+          <AppButton 
+            href={buttonHref}
+            onclick={buttonOnclick}
+            variant="secondary"
+          >
+            {buttonText}
+          </AppButton>
+        </div>
+      </div>
+    </>
+  )}
+  
+  {variant === 'featured' && (
+    <>
+      {/* Image */}
+      <div class="aspect-[4/3] overflow-hidden rounded-xl mb-4">
+        <img 
+          src={imageSrc} 
+          alt={imageAlt}
+          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+      
+      {/* Contenu */}
+      <div class="space-y-3">
+        {subtitle && (
+          <p class="text-overline text-gray-500">{subtitle}</p>
+        )}
+        <h3 class="text-subheadline font-semibold">{title}</h3>
+        {description && (
+          <p class="text-body text-gray-600">{description}</p>
+        )}
+        
+        {/* Bouton */}
+        <AppButton 
+          href={buttonHref}
+          onclick={buttonOnclick}
+          class="w-full mt-4"
+        >
+          {buttonText}
+        </AppButton>
+      </div>
+    </>
+  )}
+  
+  {variant === 'story' && (
+    <>
+      {/* Image */}
+      <div class="aspect-[16/10] overflow-hidden rounded-xl mb-4">
+        <img 
+          src={imageSrc} 
+          alt={imageAlt}
+          class="w-full h-full object-cover"
+        />
+      </div>
+      
+      {/* Contenu */}
+      <div class="flex-1 space-y-3">
+        {subtitle && (
+          <p class="text-overline text-gray-500">{subtitle}</p>
+        )}
+        <h3 class="text-subheadline font-semibold">{title}</h3>
+        {description && (
+          <p class="text-body text-gray-600 flex-1">{description}</p>
+        )}
+        
+        {/* Bouton */}
+        <AppButton 
+          href={buttonHref}
+          onclick={buttonOnclick}
+          variant="secondary"
+          class="w-full"
+        >
+          {buttonText}
+        </AppButton>
+      </div>
+    </>
+  )}
+</div>
+
+<style>
+  .card-hero {
+    border-radius: 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-appstore {
+    max-width: 390px;
+    border-radius: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+</style>

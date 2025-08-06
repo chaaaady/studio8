@@ -1,0 +1,1322 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Studio Emara • Aujourd'hui">
+  <div class="today-page">
+    <!-- App Store Today Header -->
+    <header class="today-header">
+      <div class="today-header-content">
+        <!-- Logo -->
+        <div class="today-logo">
+          <img src="/logo.png" alt="Studio Emara" class="today-logo-image" />
+          <div class="today-logo-text">
+            <span class="today-logo-subtitle">STUDIOS</span>
+            <h1 class="today-logo-title">EMARA</h1>
+          </div>
+        </div>
+        
+        <!-- Navigation Desktop -->
+        <nav class="today-nav">
+          <a href="#studios">Studios</a>
+          <a href="#fidelite">Fidélité</a>
+          <a href="#about">À propos</a>
+          <a href="#services">Services</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        
+        <!-- CTA Button -->
+        <button 
+          class="today-button-black today-button-small"
+          onclick="window.location.href='tel:0756812255'"
+        >
+          Réserver
+        </button>
+        
+        <!-- Mobile Menu Button -->
+        <button class="today-burger-menu" id="burger-menu" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Mobile Menu Overlay - DÉPLACÉ EN DEHORS DU HEADER -->
+    <div class="today-mobile-menu" id="mobile-menu">
+      <div class="today-mobile-menu-content">
+        <!-- Bouton fermer unique -->
+        <button class="today-mobile-close" id="mobile-close" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <nav class="today-mobile-nav">
+          <a href="#studios" onclick="closeMobileMenu()">Studios</a>
+          <a href="#fidelite" onclick="closeMobileMenu()">Fidélité</a>
+          <a href="#about" onclick="closeMobileMenu()">À propos</a>
+          <a href="#services" onclick="closeMobileMenu()">Services</a>
+          <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+          <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        </nav>
+        <button 
+          class="today-button-black today-button-large w-full"
+          onclick="window.location.href='tel:0756812255'; closeMobileMenu()"
+        >
+          Réserver maintenant
+        </button>
+      </div>
+    </div>
+
+    <!-- App Store Today Hero Section -->
+    <section class="today-hero">
+      <!-- Background Image -->
+      <div class="today-hero-bg">
+        <img 
+          src="/hero-bg.jpeg" 
+          alt="Studio Emara Hero" 
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="today-hero-overlay"></div>
+      
+      <!-- Hero Content -->
+      <div class="today-hero-content">
+        <div class="today-hero-label">
+          Programme Fidélité
+        </div>
+        <h1 class="today-hero-title">
+          Cumulez vos heures, réduisez votre tarif.
+        </h1>
+        <div class="today-hero-percentages">
+          <div class="today-hero-percentage-item">
+            <span class="today-hero-hours">8h</span>
+            <span class="today-hero-arrow-down">↓</span>
+            <span class="today-hero-discount">–5%</span>
+          </div>
+          <div class="today-hero-percentage-item">
+            <span class="today-hero-hours">20h</span>
+            <span class="today-hero-arrow-down">↓</span>
+            <span class="today-hero-discount">–10%</span>
+          </div>
+          <div class="today-hero-percentage-item">
+            <span class="today-hero-hours">40h</span>
+            <span class="today-hero-arrow-down">↓</span>
+            <span class="today-hero-discount">–15%</span>
+          </div>
+          <div class="today-hero-percentage-item">
+            <span class="today-hero-hours">60h</span>
+            <span class="today-hero-arrow-down">↓</span>
+            <span class="today-hero-discount">–20%</span>
+          </div>
+        </div>
+        <p class="today-hero-subtitle today-hero-italic">
+          Remise appliquée dès la session suivante, valable à vie sur vos heures et vos mix-mastering.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button 
+            class="today-button-black today-button-large"
+            onclick="window.scrollTo({top: document.getElementById('fidelite').offsetTop, behavior: 'smooth'})"
+          >
+            Découvrir
+          </button>
+          <button 
+            class="today-button today-button-secondary today-button-large"
+            onclick="window.location.href='tel:0756812255'"
+          >
+            Réserver maintenant
+          </button>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="today-scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="m7 13 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Studios Section - Refonte complète -->
+    <section id="studios" class="today-section">
+      <!-- Section Header -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-1">
+          <div class="today-section-label">
+            Nos Studios
+          </div>
+          <h2 class="today-section-title">
+            Trouvez votre espace créatif
+          </h2>
+          <p class="today-section-subtitle">
+            Découvrez notre sélection de studios d'enregistrement professionnels, 
+            chacun conçu pour des besoins spécifiques et des sessions d'exception.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Studios Grid - Mise en évidence individuelle -->
+      <div class="space-y-12 max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <!-- Studio A - Premium -->
+        <div class="today-studio-featured today-animate-stagger-2">
+          <div class="today-studio-featured-card">
+            <div class="today-studio-featured-image">
+              <img 
+                src="/studio-a-bg.webp" 
+                alt="Studio A Premium" 
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="today-studio-featured-overlay"></div>
+              
+              <!-- Label premium -->
+              <div class="today-studio-featured-label">
+                Studio Premium
+              </div>
+              
+              <!-- Bouton expand -->
+              <button class="today-studio-expand-button" onclick="openGallery('studio-a')">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Plus grand
+              </button>
+              
+            </div>
+            
+            <!-- Footer avec détails -->
+            <div class="today-studio-featured-footer">
+              <div class="today-studio-featured-info">
+                <div class="today-studio-featured-main">
+                  <div class="today-studio-featured-title">STUDIO A</div>
+                  <div class="today-studio-featured-price">35€/H • Jusqu'à 10 personnes</div>
+                  <div class="today-studio-featured-features">40 m² • Ingénieur son inclus • Équipement haut de gamme</div>
+                </div>
+                <div class="today-studio-featured-description">
+                  L'expérience studio ultime - 40m² avec ingénieur son dédié.
+                </div>
+              </div>
+              <button 
+                class="today-studio-featured-button"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                Réserver maintenant
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Studio B - Professionnel -->
+        <div class="today-studio-featured today-animate-stagger-3">
+          <div class="today-studio-featured-card">
+            <div class="today-studio-featured-image">
+              <img 
+                src="/studio-b-bg.avif" 
+                alt="Studio B Professionnel" 
+              />
+              <div class="today-studio-featured-overlay"></div>
+              
+              <!-- Label professionnel -->
+              <div class="today-studio-featured-label">
+                Studio REC
+              </div>
+              
+              <!-- Bouton expand -->
+              <button class="today-studio-expand-button" onclick="openGallery('studio-b')">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Plus grand
+              </button>
+              
+            </div>
+            
+            <div class="today-studio-featured-footer">
+              <div class="today-studio-featured-info">
+                <div class="today-studio-featured-main">
+                  <div class="today-studio-featured-title">STUDIO B</div>
+                  <div class="today-studio-featured-price">35€/H • Jusqu'à 10 personnes</div>
+                  <div class="today-studio-featured-features">40 m² • Ingénieur son inclus • Acoustique optimisée</div>
+                </div>
+                <div class="today-studio-featured-description">
+                  Studio d'enregistrement professionnel - 2h minimum. Studio polyvalent parfait pour les sessions d'enregistrement et les répétitions de groupe.
+                </div>
+              </div>
+              <button 
+                class="today-studio-featured-button"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                Réserver maintenant
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Studio C - Compact -->
+        <div class="today-studio-featured today-animate-stagger-4">
+          <div class="today-studio-featured-card">
+            <div class="today-studio-featured-image">
+              <img 
+                src="/studio-c-bg.jpg" 
+                alt="Studio C Compact" 
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="today-studio-featured-overlay"></div>
+              
+              <div class="today-studio-featured-label">
+                Studio Compact
+              </div>
+              
+              <!-- Bouton expand -->
+              <button class="today-studio-expand-button" onclick="openGallery('studio-c')">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Plus grand
+              </button>
+              
+            </div>
+            
+            <div class="today-studio-featured-footer">
+              <div class="today-studio-featured-info">
+                <div class="today-studio-featured-main">
+                  <div class="today-studio-featured-title">STUDIO C</div>
+                  <div class="today-studio-featured-price">30€/H • Jusqu'à 6 personnes</div>
+                  <div class="today-studio-featured-features">25 m² • Ingénieur son inclus • Intimité garantie</div>
+                </div>
+                <div class="today-studio-featured-description">
+                  Studio compact - 2h minimum. Studio intimiste idéal pour les sessions vocales, les interviews et les petits groupes.
+                </div>
+              </div>
+              <button 
+                class="today-studio-featured-button"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                Réserver maintenant
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Studio D - Beatmaking -->
+        <div class="today-studio-featured today-animate-stagger-5">
+          <div class="today-studio-featured-card">
+            <div class="today-studio-featured-image">
+              <img 
+                src="/studio-d-bg.jpg" 
+                alt="Studio D Beatmaking" 
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="today-studio-featured-overlay"></div>
+              
+              <div class="today-studio-featured-label">
+                Poste de Production
+              </div>
+              
+              <!-- Bouton expand -->
+              <button class="today-studio-expand-button" onclick="openGallery('studio-d')">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Plus grand
+              </button>
+              
+                          </div>
+            
+            <div class="today-studio-featured-footer">
+              <div class="today-studio-featured-info">
+                <div class="today-studio-featured-main">
+                  <div class="today-studio-featured-title">STUDIO D</div>
+                  <div class="today-studio-featured-price">20€/H • Poste de travail dédié</div>
+                  <div class="today-studio-featured-features">Équipement production • Logiciels pro • Monitoring haute qualité</div>
+                </div>
+                <div class="today-studio-featured-description">
+                  Poste de travail dédié - 5h minimum. Poste de production spécialisé pour beatmakers, producteurs et ingénieurs son.
+                </div>
+              </div>
+              <button 
+                class="today-studio-featured-button"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                Réserver maintenant
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Programme Fidélité Section -->
+    <section id="fidelite" class="today-section">
+      <!-- Section Header -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-1">
+          <div class="today-section-label">
+            Programme Fidélité
+          </div>
+          <h2 class="today-section-title">
+            Cumulez vos heures et économisez à vie
+          </h2>
+          <p class="today-section-subtitle">
+            Cumulez vos heures et économisez à vie sur vos sessions d'enregistrement et vos prestations de mix-mastering.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Fidélité Tiers Grid -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Bronze Tier -->
+          <div class="today-fidelite-card today-animate-stagger-2">
+            <div class="today-fidelite-badge today-fidelite-bronze">
+              <span>Bronze</span>
+            </div>
+            <div class="today-fidelite-content">
+              <div class="today-fidelite-hours">
+                <span class="today-fidelite-number">8</span>
+                <span class="today-fidelite-unit">heures</span>
+              </div>
+              <div class="today-fidelite-discount">
+                <span class="today-fidelite-percent">-5%</span>
+                <span class="today-fidelite-label">remise permanente</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Silver Tier -->
+          <div class="today-fidelite-card today-animate-stagger-3">
+            <div class="today-fidelite-badge today-fidelite-silver">
+              <span>Silver</span>
+            </div>
+            <div class="today-fidelite-content">
+              <div class="today-fidelite-hours">
+                <span class="today-fidelite-number">20</span>
+                <span class="today-fidelite-unit">heures</span>
+              </div>
+              <div class="today-fidelite-discount">
+                <span class="today-fidelite-percent">-10%</span>
+                <span class="today-fidelite-label">remise permanente</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gold Tier -->
+          <div class="today-fidelite-card today-animate-stagger-4">
+            <div class="today-fidelite-badge today-fidelite-gold">
+              <span>Gold</span>
+            </div>
+            <div class="today-fidelite-content">
+              <div class="today-fidelite-hours">
+                <span class="today-fidelite-number">40</span>
+                <span class="today-fidelite-unit">heures</span>
+              </div>
+              <div class="today-fidelite-discount">
+                <span class="today-fidelite-percent">-15%</span>
+                <span class="today-fidelite-label">remise permanente</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Platinum Tier -->
+          <div class="today-fidelite-card today-animate-stagger-5">
+            <div class="today-fidelite-badge today-fidelite-platinum">
+              <span>Platinum</span>
+            </div>
+            <div class="today-fidelite-content">
+              <div class="today-fidelite-hours">
+                <span class="today-fidelite-number">60</span>
+                <span class="today-fidelite-unit">heures</span>
+              </div>
+              <div class="today-fidelite-discount">
+                <span class="today-fidelite-percent">-20%</span>
+                <span class="today-fidelite-label">remise permanente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Example Card -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10 mt-12">
+        <div class="today-fidelite-example today-animate-stagger-6">
+          <div class="today-fidelite-example-header">
+            <h3 class="today-fidelite-example-title">Exemple concret</h3>
+            <p class="today-fidelite-example-subtitle">Avec 20 heures cumulées (Silver)</p>
+          </div>
+          
+          <div class="today-fidelite-example-grid">
+            <div class="today-fidelite-example-item">
+              <div class="today-fidelite-example-label">Prix standard 4h</div>
+              <div class="today-fidelite-example-price">
+                <span class="today-fidelite-example-old">140€</span>
+                <span class="today-fidelite-example-new">126€</span>
+              </div>
+            </div>
+            
+            <div class="today-fidelite-example-item">
+              <div class="today-fidelite-example-label">Mix-Mastering</div>
+              <div class="today-fidelite-example-price">
+                <span class="today-fidelite-example-old">145€</span>
+                <span class="today-fidelite-example-new">145€</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="today-fidelite-example-savings">
+            <span class="today-fidelite-example-savings-label">Économies réalisées :</span>
+            <span class="today-fidelite-example-savings-amount">-28,50€ par titre</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Disclaimer & CTA -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10 mt-8">
+        <div class="today-fidelite-footer today-animate-stagger-7">
+          <p class="today-fidelite-disclaimer">
+            Votre remise permanente est appliquée automatiquement dès la session suivante et n'expire jamais. Offre non cumulable avec les promotions ponctuelles.
+          </p>
+          
+          <button 
+            class="today-button-black today-button-large mt-6"
+            onclick="window.location.href='tel:0756812255'"
+          >
+            En savoir plus
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section - Studio Card Style -->
+    <section id="about" class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-3">
+          <div class="today-section-label">
+            Notre Histoire
+          </div>
+          <h2 class="today-section-title">
+            Quatre studios, Une direction.
+          </h2>
+        </div>
+      </div>
+      
+      <!-- Notre Histoire Card - Studio Style -->
+      <div class="space-y-12 max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-studio-featured today-animate-stagger-4">
+          <div class="today-studio-featured-card">
+            <div class="today-studio-featured-image">
+              <img 
+                src="/histoire-bg.jpeg" 
+                alt="Studio Emara Histoire" 
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="today-studio-featured-overlay"></div>
+              
+              <!-- Label -->
+              <div class="today-studio-featured-label">
+                Fondateurs
+              </div>
+              
+              <!-- Bouton expand -->
+              <button class="today-studio-expand-button" onclick="window.location.href='tel:0756812255'">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Voir plus
+              </button>
+              
+            </div>
+            
+            <!-- Footer avec détails -->
+            <div class="today-studio-featured-footer">
+              <div class="today-studio-featured-info">
+                <div class="today-studio-featured-main">
+                  <div class="today-studio-featured-title">LES FRÈRES EMARA</div>
+                  <div class="today-studio-featured-price">Trent 700 et Chady Emara • Producteurs multi-certifiés</div>
+                  <div class="today-studio-featured-features">
+                    Les studios d'enregistrement Emara ont été fondés par les frères Emara. Forts de leur expertise, ils ont marqué l'industrie musicale rap par leurs collaborations avec de nombreux artistes réputés.
+                  </div>
+                </div>
+                <div class="today-studio-featured-description">Booba, Ninho, Damso, Gunna, Jul, Niska, SCH, Naps, SDM, PNL, Djadja & Dinaz, Kaaris, Kalash, Bramsito, Dosseh, RK, Gambino, Maes...</div>
+              </div>
+              <button 
+                class="today-studio-featured-button"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                Voir la discographie
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section - Studio Card Style -->
+    <section id="services" class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-4">
+          <div class="today-section-label">
+            Nos Services
+          </div>
+          <h2 class="today-section-title">
+            Excellence à chaque étape
+          </h2>
+          <p class="today-section-subtitle">
+            De l'enregistrement au mastering, nos services couvrent tous vos besoins créatifs de l'idée à Snep.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Services Grid - Mini Cards -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Mini Card 1 - Enregistrement -->
+          <div class="today-card today-animate-stagger-5">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Service • Production
+              </div>
+              <h3 class="today-card-title">
+                Enregistrement
+              </h3>
+              <p class="today-card-subtitle">
+                Capturez vos performances grâce à l'expertise de nos ingénieurs son.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Mini Card 2 - Mixage & Mastering -->
+          <div class="today-card today-animate-stagger-6">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Service • Post-Production
+              </div>
+              <h3 class="today-card-title">
+                Mixage & Mastering
+              </h3>
+              <p class="today-card-subtitle">
+                145€ / TITRE • Qualité professionnelle prête à la diffusion.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Mini Card 3 - Production Musicale -->
+          <div class="today-card today-animate-stagger-6">
+            <div class="today-card-content">
+              <div class="today-card-label">
+                Service • Création
+              </div>
+              <h3 class="today-card-title">
+                Production Musicale
+              </h3>
+              <p class="today-card-subtitle">
+                De l'idée au produit fini, nos producteurs vous accompagnent.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Autres prestations Section -->
+    <section class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-4">
+          <div class="today-section-label">
+            Nos Services
+          </div>
+          <h2 class="today-section-title">
+            Autres prestations
+          </h2>
+          <p class="today-section-subtitle">
+            Parfait pour votre projet
+          </p>
+        </div>
+      </div>
+      
+      <!-- Services Mini Cards -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="space-y-6">
+          
+          <!-- Mix-Mastering Card -->
+          <div class="today-card today-animate-stagger-5">
+            <div class="today-card-content">
+              <div class="flex items-center justify-between">
+                <div class="flex-1 pr-6">
+                  <h3 class="today-card-title">MIX-MASTERING</h3>
+                  <p class="text-sm text-gray-600">145€ / TITRE • Qualité professionnelle prête à la diffusion.</p>
+                  <p class="text-xs text-gray-500">Services inclus</p>
+                </div>
+                <button 
+                  class="today-button-black today-button-compact"
+                  onclick="window.location.href='tel:0756812255'"
+                >
+                  RÉSERVER
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Lock Out Card -->
+          <div class="today-card today-animate-stagger-6">
+            <div class="today-card-content">
+              <div class="flex items-center justify-between">
+                <div class="flex-1 pr-6">
+                  <h3 class="today-card-title">LOCK OUT</h3>
+                  <p class="text-sm text-gray-600">100€ / H • Privatisation complète des 3 studios (+100m²).</p>
+                  <p class="text-xs text-gray-500">Services inclus</p>
+                </div>
+                <button 
+                  class="today-button-black today-button-compact"
+                  onclick="window.location.href='tel:0756812255'"
+                >
+                  RÉSERVER
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Séminaire Card -->
+          <div class="today-card today-animate-stagger-6">
+            <div class="today-card-content">
+              <div class="flex items-center justify-between">
+                <div class="flex-1 pr-6">
+                  <h3 class="today-card-title">SÉMINAIRE</h3>
+                  <p class="text-sm text-gray-600">Sur demande • Création d'albums avec beatmakers & ingés – location semaine (4 studios dédiés).</p>
+                  <p class="text-xs text-gray-500">Services inclus</p>
+                </div>
+                <button 
+                  class="today-button-black today-button-compact"
+                  onclick="window.location.href='tel:0756812255'"
+                >
+                  RÉSERVER
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sans ingénieur Card -->
+          <div class="today-card today-animate-stagger-6">
+            <div class="today-card-content">
+              <div class="flex items-center justify-between">
+                <div class="flex-1 pr-6">
+                  <h3 class="today-card-title">RÉSERVATIONS SANS INGÉ</h3>
+                  <p class="text-sm text-gray-600">Voir Grille tarifaire • Tarifs sans ingénieur son disponibles.</p>
+                  <p class="text-xs text-gray-500">Services inclus</p>
+                </div>
+                <button 
+                  class="today-button-black today-button-compact"
+                  onclick="navigator.clipboard.writeText('0756812255')"
+                >
+                  TARIFS
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-section-header today-animate-stagger-4">
+          <div class="today-section-label">
+            Support
+          </div>
+          <h2 class="today-section-title">
+            Questions fréquentes
+          </h2>
+          <p class="today-section-subtitle">
+            Réponses rapides aux questions courantes sur nos services
+          </p>
+        </div>
+      </div>
+      
+      <!-- FAQ Accordéon -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-faq-item today-animate-stagger-5" data-faq="1">
+          <div class="today-faq-header" onclick="toggleFAQ(1)">
+            <h3 class="today-faq-title">Quelle est la capacité d'accueil des studios ?</h3>
+            <svg class="today-faq-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="today-faq-content">
+            <p class="today-faq-text">Le studio A peut accueillir jusqu'à 10 personnes, le studio B, 6 personnes et le C, 4 personnes.</p>
+          </div>
+        </div>
+        
+        <div class="today-faq-item today-animate-stagger-5" data-faq="2">
+          <div class="today-faq-header" onclick="toggleFAQ(2)">
+            <h3 class="today-faq-title">Le studio est-il fumeur ?</h3>
+            <svg class="today-faq-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="today-faq-content">
+            <p class="today-faq-text">Oui, un purificateur d'air est installé pour garantir une bonne ventilation de la pièce.</p>
+          </div>
+        </div>
+        
+        <div class="today-faq-item today-animate-stagger-5" data-faq="3">
+          <div class="today-faq-header" onclick="toggleFAQ(3)">
+            <h3 class="today-faq-title">Est ce que l'alcool est autorisé ?</h3>
+            <svg class="today-faq-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="today-faq-content">
+            <p class="today-faq-text">Non, la consomation d'alcool est formellement interdite dans le studio.</p>
+          </div>
+        </div>
+        
+        <div class="today-faq-item today-animate-stagger-5" data-faq="4">
+          <div class="today-faq-header" onclick="toggleFAQ(4)">
+            <h3 class="today-faq-title">Où se trouve le studio ?</h3>
+            <svg class="today-faq-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="today-faq-content">
+            <p class="today-faq-text">Le studio est idéalement situé au 50 Quai des Carrières, 94220 Charenton-le-Pont, juste en face de l'autoroute A4. Il se trouve à seulement 5 minutes du périphérique Porte de Bercy, à 4 minutes des quais de Seine, et à 8 minutes à pied de la station Charenton-Écoles.</p>
+          </div>
+        </div>
+        
+        <div class="today-faq-item today-animate-stagger-5" data-faq="5">
+          <div class="today-faq-header" onclick="toggleFAQ(5)">
+            <h3 class="today-faq-title">Peut-on réserver une session pour le jour même ?</h3>
+            <svg class="today-faq-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="today-faq-content">
+            <p class="today-faq-text">Non, nous ne pouvons accepter que des réservations effectuées au moins 24 heures à l'avance, en raison de contraintes logistiques.</p>
+          </div>
+        </div>
+      </div>
+      
+
+    </section>
+
+    <!-- Questions Section - Today Card Style -->
+    <section class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-card today-animate-stagger-6">
+          <div class="today-card-content text-center">
+            <div class="today-card-label">
+              Support
+            </div>
+            <h2 class="today-card-title">
+              Vous avez d'autres questions ?
+            </h2>
+            <p class="today-card-subtitle max-w-[800px] mx-auto">
+              Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans votre projet.
+            </p>
+            
+            <div class="flex justify-center items-center mt-8">
+              <button 
+                class="today-button-black"
+                onclick="window.location.href='tel:0756812255'"
+              >
+                NOUS CONTACTER
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - Today Card Style -->
+    <section id="contact" class="today-section">
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-card today-animate-stagger-6">
+          <div class="today-card-content text-center">
+            <div class="today-card-label">
+            Réservation
+          </div>
+          <h2 class="today-card-title">
+            Prêt à enregistrer ?
+          </h2>
+          <p class="today-card-subtitle max-w-[800px] mx-auto">
+            Réservez votre session d'enregistrement dès maintenant et bénéficiez de l'expertise des Studios Emara pour donner vie à vos projets.
+          </p>
+          
+          <div class="flex justify-center items-center mt-8">
+            <button 
+              class="today-button-black"
+              onclick="window.location.href='tel:0756812255'"
+            >
+              Appeler maintenant
+            </button>
+          </div>
+          
+          <p class="text-sm text-gray-500 mt-4">
+            📞 07 56 81 22 55 • Disponible 7j/7
+          </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <!-- Galerie plein écran -->
+  <div id="gallery-overlay" class="today-gallery-overlay">
+    <div class="today-gallery-container">
+      <div class="today-gallery-nav">
+        <button class="today-gallery-close" onclick="closeGallery()">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="today-gallery-counter">
+          <span id="gallery-counter">1 / 3</span>
+        </div>
+      </div>
+      
+      <div class="today-gallery-arrows">
+        <button class="today-gallery-arrow" id="gallery-prev" onclick="changeGalleryImage(-1)">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="today-gallery-arrow" id="gallery-next" onclick="changeGalleryImage(1)">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <img id="gallery-image" class="today-gallery-image" src="" alt="Studio" />
+    </div>
+  </div>
+
+  <!-- App Store Today Animations & Interactions - OPTIMISÉ -->
+  <script>
+    // Script de diagnostic pour le menu mobile
+    console.log('🔍 Début du diagnostic du menu mobile...');
+    
+    // Vérification immédiate des éléments
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('📱 DOM chargé, vérification des éléments...');
+      
+      const burgerMenu = document.getElementById('burger-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.getElementById('mobile-close');
+      
+      console.log('🔍 Éléments trouvés:', {
+        burgerMenu: burgerMenu ? '✅' : '❌',
+        mobileMenu: mobileMenu ? '✅' : '❌',
+        mobileClose: mobileClose ? '✅' : '❌'
+      });
+      
+      if (!burgerMenu || !mobileMenu || !mobileClose) {
+        console.error('❌ Éléments manquants pour le menu mobile');
+        return;
+      }
+      
+      // Test du clic sur le burger menu - CORRIGÉ
+      burgerMenu.addEventListener('click', function(e) {
+        console.log('🍔 Burger menu cliqué!');
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation(); // Empêche la propagation
+        
+        const isActive = mobileMenu.classList.contains('active');
+        console.log('📊 État actuel du menu:', isActive ? 'Ouvert' : 'Fermé');
+        
+        if (isActive) {
+          // Fermer le menu
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+          console.log('🔒 Menu fermé');
+        } else {
+          // Ouvrir le menu
+          mobileMenu.classList.add('active');
+          burgerMenu.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          console.log('🔓 Menu ouvert');
+        }
+        
+        // Vérification après changement
+        console.log('📊 Nouvel état:', mobileMenu.classList.contains('active') ? 'Ouvert' : 'Fermé');
+      });
+      
+      // Test du bouton fermer - CORRIGÉ
+      mobileClose.addEventListener('click', function(e) {
+        console.log('❌ Bouton fermer cliqué!');
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation(); // Empêche la propagation
+        
+        mobileMenu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        console.log('🔒 Menu fermé via bouton X');
+      });
+      
+      // Test du clic en dehors du menu
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          console.log('🖱️ Clic en dehors du menu');
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Test de la touche Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          console.log('⌨️ Touche Escape pressée');
+          mobileMenu.classList.remove('active');
+          burgerMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Fonction globale pour fermer le menu
+      window.closeMobileMenu = function() {
+        console.log('🌐 closeMobileMenu() appelée');
+        mobileMenu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+      
+      // Test manuel du menu
+      window.testMobileMenu = function() {
+        console.log('🧪 Test manuel du menu...');
+        mobileMenu.classList.add('active');
+        burgerMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        console.log('✅ Menu ouvert manuellement');
+      };
+      
+      // Vérification de l'état du menu - DIAGNOSTIC AVANCÉ
+      window.checkMenuState = function() {
+        const mobileMenuStyle = window.getComputedStyle(mobileMenu);
+        const burgerMenuStyle = window.getComputedStyle(burgerMenu);
+        const headerStyle = window.getComputedStyle(document.querySelector('.today-header'));
+        
+        console.log('📊 DIAGNOSTIC COMPLET DU MENU:', {
+          // État des classes
+          mobileMenuActive: mobileMenu.classList.contains('active'),
+          burgerMenuActive: burgerMenu.classList.contains('active'),
+          bodyOverflow: document.body.style.overflow,
+          
+          // Styles du menu mobile
+          mobileMenuDisplay: mobileMenuStyle.display,
+          mobileMenuVisibility: mobileMenuStyle.visibility,
+          mobileMenuOpacity: mobileMenuStyle.opacity,
+          mobileMenuZIndex: mobileMenuStyle.zIndex,
+          mobileMenuPosition: mobileMenuStyle.position,
+          mobileMenuTop: mobileMenuStyle.top,
+          mobileMenuLeft: mobileMenuStyle.left,
+          mobileMenuWidth: mobileMenuStyle.width,
+          mobileMenuHeight: mobileMenuStyle.height,
+          
+          // Styles du burger menu
+          burgerMenuZIndex: burgerMenuStyle.zIndex,
+          burgerMenuDisplay: burgerMenuStyle.display,
+          
+          // Styles du header
+          headerZIndex: headerStyle.zIndex,
+          
+          // Hiérarchie DOM
+          mobileMenuParent: mobileMenu.parentElement?.tagName,
+          burgerMenuParent: burgerMenu.parentElement?.tagName,
+          
+          // Éléments avec z-index élevé
+          highZIndexElements: Array.from(document.querySelectorAll('*')).filter(el => {
+            const zIndex = window.getComputedStyle(el).zIndex;
+            return zIndex !== 'auto' && parseInt(zIndex) > 1000;
+          }).map(el => ({
+            element: el.tagName + (el.id ? '#' + el.id : '') + (el.className ? '.' + el.className.split(' ')[0] : ''),
+            zIndex: window.getComputedStyle(el).zIndex
+          }))
+        });
+      };
+      
+      console.log('✅ Diagnostic du menu mobile terminé');
+      console.log('💡 Utilisez testMobileMenu() pour tester manuellement');
+      console.log('💡 Utilisez checkMenuState() pour vérifier l\'état');
+    });
+
+    // Optimisations de performance JavaScript
+    document.addEventListener('DOMContentLoaded', () => {
+      // Intersection Observer optimisé avec throttling
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Optimisation: utiliser querySelectorAll une seule fois
+      const animatedElements = document.querySelectorAll('[class*="today-animate"]');
+      animatedElements.forEach(el => {
+        el.classList.add('today-fade-in');
+        observer.observe(el);
+      });
+      
+      // Galerie plein écran optimisée
+      let currentGallery = null;
+      let currentImageIndex = 0;
+      let galleryImages = [];
+      
+      // Données des galeries pour chaque studio (mise en cache)
+      const studioGalleries = {
+        'studio-a': [
+          '/studio-a.jpeg',
+          '/placeholder.svg',
+          '/placeholder.svg'
+        ],
+        'studio-b': [
+          '/placeholder.svg',
+          '/placeholder.svg',
+          '/placeholder.svg'
+        ],
+        'studio-c': [
+          '/placeholder.svg',
+          '/placeholder.svg',
+          '/placeholder.svg'
+        ],
+        'studio-d': [
+          '/placeholder.svg',
+          '/placeholder.svg',
+          '/placeholder.svg'
+        ]
+      };
+      
+      // Fonction pour ouvrir la galerie optimisée
+      window.openGallery = function(studioId) {
+        currentGallery = studioId;
+        currentImageIndex = 0;
+        galleryImages = studioGalleries[studioId] || [];
+        
+        if (galleryImages.length > 0) {
+          const galleryImage = document.getElementById('gallery-image');
+          galleryImage.src = galleryImages[0];
+          updateGalleryCounter();
+          document.getElementById('gallery-overlay').classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+      
+      // Fonction pour fermer la galerie
+      window.closeGallery = function() {
+        document.getElementById('gallery-overlay').classList.remove('active');
+        document.body.style.overflow = '';
+        currentGallery = null;
+        currentImageIndex = 0;
+      };
+      
+      // Fonction pour changer d'image optimisée
+      window.changeGalleryImage = function(direction) {
+        if (!currentGallery || galleryImages.length === 0) return;
+        
+        currentImageIndex += direction;
+        
+        if (currentImageIndex < 0) {
+          currentImageIndex = galleryImages.length - 1;
+        } else if (currentImageIndex >= galleryImages.length) {
+          currentImageIndex = 0;
+        }
+        
+        const galleryImage = document.getElementById('gallery-image');
+        galleryImage.src = galleryImages[currentImageIndex];
+        updateGalleryCounter();
+      };
+      
+      // Fonction pour mettre à jour le compteur
+      function updateGalleryCounter() {
+        const counter = document.getElementById('gallery-counter');
+        counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+      }
+      
+      // Gestionnaire d'événements optimisé avec debouncing
+      let escapeTimeout;
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (document.getElementById('gallery-overlay').classList.contains('active')) {
+            closeGallery();
+          } else if (document.getElementById('mobile-menu').classList.contains('active')) {
+            closeMobileMenu();
+          }
+        }
+        
+        // Navigation avec flèches optimisée
+        if (document.getElementById('gallery-overlay').classList.contains('active')) {
+          if (e.key === 'ArrowLeft') {
+            changeGalleryImage(-1);
+          } else if (e.key === 'ArrowRight') {
+            changeGalleryImage(1);
+          }
+        }
+      });
+      
+      // FAQ Accordéon optimisé
+      window.toggleFAQ = function(faqId) {
+        const faqItem = document.querySelector(`[data-faq="${faqId}"]`);
+        const isActive = faqItem.classList.contains('active');
+        
+        // Fermer tous les autres FAQ
+        document.querySelectorAll('.today-faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Ouvrir/fermer le FAQ cliqué
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      };
+
+      // Parallax effect optimisé avec RAF
+      const heroImage = document.querySelector('.today-parallax');
+      if (heroImage) {
+        let ticking = false;
+        let lastScrollY = window.pageYOffset;
+        
+        function updateParallax() {
+          const currentScrollY = window.pageYOffset;
+          if (Math.abs(currentScrollY - lastScrollY) > 5) { // Throttling
+            const parallaxOffset = currentScrollY * 0.5;
+            heroImage.style.setProperty('--parallax-offset', `${parallaxOffset}px`);
+            lastScrollY = currentScrollY;
+          }
+          ticking = false;
+        }
+
+        function requestParallaxUpdate() {
+          if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+          }
+        }
+
+        // Optimisation: utiliser passive listener
+        window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+      }
+
+      // Smooth scroll optimisé
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Copy to clipboard optimisé
+      const copyButtons = document.querySelectorAll('button');
+      copyButtons.forEach(button => {
+        if (button.textContent?.includes('Copier le numéro')) {
+          button.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText('0756812255');
+              const originalText = button.textContent;
+              button.textContent = 'Numéro copié !';
+              button.style.backgroundColor = '#34D399';
+              
+              setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+              }, 2000);
+            } catch (err) {
+              console.error('Failed to copy: ', err);
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Add Marquee Animation CSS -->
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    .animate-marquee-slow {
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+  
+  <!-- Footer -->
+  <footer class="today-footer">
+    <div class="today-footer-content">
+
+      
+      <div class="today-footer-section">
+        <h4 class="today-footer-title">Contact</h4>
+        <div class="today-footer-list">
+          <li>50 Quai des Carrières</li>
+          <li>94220 Charenton-le-Pont</li>
+          <li>07 56 81 22 55</li>
+        </div>
+      </div>
+      
+      <div class="today-footer-section">
+        <h4 class="today-footer-title">Services</h4>
+        <div class="today-footer-list">
+          <li>Enregistrement</li>
+          <li>Mixage & Mastering</li>
+          <li>Production Musicale</li>
+        </div>
+      </div>
+      
+      <!-- Desktop only - Legal links -->
+      <div class="today-footer-section today-footer-legal">
+        <h4 class="today-footer-title">Informations</h4>
+        <div class="today-footer-list">
+          <li><a href="#" class="today-footer-link">Conditions générales</a></li>
+          <li><a href="#" class="today-footer-link">Mentions légales</a></li>
+          <li><a href="#" class="today-footer-link">Politique de confidentialité</a></li>
+          <li><a href="#" class="today-footer-link">CGV</a></li>
+        </div>
+      </div>
+    </div>
+    
+    <div class="today-footer-bottom">
+      <p class="today-footer-copyright">
+        © 2024 Studios Emara. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
+</Layout>

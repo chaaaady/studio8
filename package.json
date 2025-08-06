@@ -1,0 +1,48 @@
+{
+  "name": "studio-emara",
+  "version": "1.0.0",
+  "description": "Studio Emara - Site web professionnel",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "migrate:design-system": "node scripts/migrate-to-design-system.js",
+    "migrate:design-system:dry-run": "node scripts/migrate-to-design-system.js --dry-run",
+    "setup:design-system": "npm run migrate:design-system && echo '✅ Design system configuré!'"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.2",
+    "@astrojs/tailwind": "^6.0.0",
+    "astro": "^4.0.0",
+    "glob": "^10.3.10",
+    "tailwindcss": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "terser": "^5.43.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "studio",
+    "emara",
+    "music",
+    "recording",
+    "astro",
+    "tailwind",
+    "design-system"
+  ],
+  "author": "Studio Emara",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaaaady/studio8.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

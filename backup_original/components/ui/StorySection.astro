@@ -1,0 +1,78 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import AppCard from './AppCard.astro';
+
+interface Props {
+  overline?: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  buttonOnclick?: string;
+  class?: string;
+}
+
+const {
+  overline = "L'HISTOIRE DU JOUR",
+  title,
+  subtitle,
+  description,
+  imageSrc,
+  imageAlt = title,
+  buttonText = "Lire l'histoire",
+  buttonHref,
+  buttonOnclick,
+  class: className = ''
+} = Astro.props;
+---
+
+<section class={`container-appstore ${className}`}>
+  <!-- Titre de section -->
+  <SectionTitle 
+    overline={overline}
+    title={title}
+    subtitle={subtitle}
+  />
+  
+  <!-- Carte Story -->
+  <div class="story-container">
+    <AppCard
+      variant="story"
+      title={title}
+      description={description}
+      imageSrc={imageSrc}
+      imageAlt={imageAlt}
+      buttonText={buttonText}
+      buttonHref={buttonHref}
+      buttonOnclick={buttonOnclick}
+      class="story-card"
+    />
+  </div>
+</section>
+
+<style>
+  .container-appstore {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .story-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .story-card {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  @media (max-width: 768px) {
+    .container-appstore {
+      padding: 0 var(--spacing-md);
+    }
+  }
+</style>

@@ -1,0 +1,130 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import AppCard from './AppCard.astro';
+
+interface Card {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  buttonOnclick?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  overline?: string;
+  cards: Card[];
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  overline,
+  cards,
+  class: className = ''
+} = Astro.props;
+---
+
+<section class={`container-appstore ${className}`}>
+  <!-- Titre de section -->
+  <SectionTitle 
+    title={title}
+    subtitle={subtitle}
+    overline={overline}
+  />
+  
+  <!-- Grille de cartes responsive -->
+  <div class="featured-grid">
+    {cards.map((card) => (
+      <AppCard
+        variant="featured"
+        title={card.title}
+        subtitle={card.subtitle}
+        description={card.description}
+        imageSrc={card.imageSrc}
+        imageAlt={card.imageAlt}
+        buttonText={card.buttonText}
+        buttonHref={card.buttonHref}
+        buttonOnclick={card.buttonOnclick}
+        class="scroll-snap-item"
+      />
+    ))}
+  </div>
+  
+  <!-- Version mobile avec scroll horizontal -->
+  <div class="featured-scroll md:hidden">
+    {cards.map((card) => (
+      <AppCard
+        variant="featured"
+        title={card.title}
+        subtitle={card.subtitle}
+        description={card.description}
+        imageSrc={card.imageSrc}
+        imageAlt={card.imageAlt}
+        buttonText={card.buttonText}
+        buttonHref={card.buttonHref}
+        buttonOnclick={card.buttonOnclick}
+        class="scroll-snap-item min-w-[300px]"
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  .container-appstore {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+  
+  /* Desktop Grid */
+  .featured-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  @media (min-width: 768px) {
+    .featured-grid {
+      display: grid;
+    }
+  }
+  
+  /* Mobile Scroll */
+  .featured-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 var(--spacing-lg);
+    margin: 0 calc(-1 * var(--spacing-lg));
+  }
+  
+  .featured-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scroll-snap-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .container-appstore {
+      padding: 0 var(--spacing-md);
+    }
+    
+    .featured-scroll {
+      padding: 0 var(--spacing-md);
+      margin: 0 calc(-1 * var(--spacing-md));
+    }
+  }
+</style>
