@@ -392,7 +392,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div class="today-fidelite-discount">
                 <span class="today-fidelite-percent">-5%</span>
-                <span class="today-fidelite-label">remise permanente</span>
+                <span class="today-fidelite-label">Enregistrement = 33,25€/h<br>Mix/Mastering = 137,75€</span>
               </div>
             </div>
           </div>
@@ -409,7 +409,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div class="today-fidelite-discount">
                 <span class="today-fidelite-percent">-10%</span>
-                <span class="today-fidelite-label">remise permanente</span>
+                <span class="today-fidelite-label">Enregistrement = 31,50€/h<br>Mix/Mastering = 130,50€</span>
               </div>
             </div>
           </div>
@@ -426,7 +426,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div class="today-fidelite-discount">
                 <span class="today-fidelite-percent">-15%</span>
-                <span class="today-fidelite-label">remise permanente</span>
+                <span class="today-fidelite-label">Enregistrement = 29,75€/h<br>Mix/Mastering = 123,25€</span>
               </div>
             </div>
           </div>
@@ -443,7 +443,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div class="today-fidelite-discount">
                 <span class="today-fidelite-percent">-20%</span>
-                <span class="today-fidelite-label">remise permanente</span>
+                <span class="today-fidelite-label">Enregistrement = 28,00€/h<br>Mix/Mastering = 116,00€</span>
               </div>
             </div>
           </div>
@@ -471,7 +471,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="today-fidelite-example-label">Mix-Mastering</div>
               <div class="today-fidelite-example-price">
                 <span class="today-fidelite-example-old">145€</span>
-                <span class="today-fidelite-example-new">145€</span>
+                <span class="today-fidelite-example-new">130,50€</span>
               </div>
             </div>
           </div>
@@ -513,48 +513,28 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       
-      <!-- Notre Histoire Card - Studio Style -->
-      <div class="space-y-12 max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div class="today-studio-featured today-animate-stagger-4">
-          <div class="today-studio-featured-card">
-            <div class="today-studio-featured-image">
-              <img 
-                src="/histoire-bg.jpeg" 
-                alt="Studio Emara Histoire" 
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="today-studio-featured-overlay"></div>
-              
-              <!-- Label -->
-              <div class="today-studio-featured-label">
-                Fondateurs
-              </div>
-              
-              <!-- Bouton expand -->
-              <button class="today-studio-expand-button" onclick="window.location.href='tel:0756812255'">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Voir plus
-              </button>
-              
+      <!-- Notre Histoire Card - Sans photo -->
+      <div class="max-w-[1152px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="today-card today-animate-stagger-4">
+          <div class="today-card-content">
+            <div class="today-card-label">
+              Fondateurs
             </div>
-            
-            <!-- Footer avec détails -->
-            <div class="today-studio-featured-footer">
-              <div class="today-studio-featured-info">
-                <div class="today-studio-featured-main">
-                  <div class="today-studio-featured-title">LES FRÈRES EMARA</div>
-                  <div class="today-studio-featured-price">Trent 700 et Chady Emara • Producteurs multi-certifiés</div>
-                  <div class="today-studio-featured-features">
-                    Les studios d'enregistrement Emara ont été fondés par les frères Emara. Forts de leur expertise, ils ont marqué l'industrie musicale rap par leurs collaborations avec de nombreux artistes réputés.
-                  </div>
-                </div>
-                <div class="today-studio-featured-description">Booba, Ninho, Damso, Gunna, Jul, Niska, SCH, Naps, SDM, PNL, Djadja & Dinaz, Kaaris, Kalash, Bramsito, Dosseh, RK, Gambino, Maes...</div>
-              </div>
+            <h3 class="today-card-title">
+              LES FRÈRES EMARA
+            </h3>
+            <p class="today-card-subtitle mb-6">
+              Trent 700 et Chady Emara • Producteurs multi-certifiés
+            </p>
+            <p class="today-card-subtitle mb-6">
+              Les studios d'enregistrement Emara ont été fondés par les frères Emara. Forts de leur expertise, ils ont marqué l'industrie musicale rap par leurs collaborations avec de nombreux artistes réputés.
+            </p>
+            <p class="today-card-subtitle mb-6">
+              Booba, Ninho, Damso, Gunna, Jul, Niska, SCH, Naps, SDM, PNL, Djadja & Dinaz, Kaaris, Kalash, Bramsito, Dosseh, RK, Gambino, Maes...
+            </p>
+            <div class="flex justify-center">
               <button 
-                class="today-studio-featured-button"
+                class="today-button-black today-button-large"
                 onclick="window.location.href='tel:0756812255'"
               >
                 Voir la discographie
