@@ -67,7 +67,7 @@
   /* SF Pro Display/Text Font Stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--color-background);
+    background-color: white;
     color: var(--color-text-primary);
     line-height: 1.4;
     margin: 0;
@@ -381,18 +381,6 @@
     border-radius: 0;
     background-color: white;
   }
-
-  /* Background blanc derrière le hero pour éviter le gris */
-  .today-hero::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    z-index: -1;
-  }
   
   .today-hero-bg {
     position: absolute;
@@ -451,7 +439,7 @@
 
   /* App Store Today Cards */
   .today-page {
-    background-color: var(--color-background);
+    background-color: white;
     min-height: 100vh;
   }
   
