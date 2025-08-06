@@ -99,6 +99,18 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     isolation: isolate;
   }
+
+  /* Background blanc au-dessus du header pour éviter la transition grise */
+  .today-header::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background-color: white;
+    z-index: 999;
+  }
   
   .today-header-content {
     max-width: 1200px;
