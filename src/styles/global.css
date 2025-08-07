@@ -56,6 +56,16 @@
     --shadow-card: 0 2px 16px var(--color-card-shadow);
     --shadow-card-hover: 0 8px 32px var(--color-card-shadow-hover);
     --shadow-button: 0 1px 4px rgba(0, 0, 0, 0.1);
+    
+    /* App Store Badge Colors */
+    --color-badge-popular: #FF6B6B;
+    --color-badge-popular-gradient: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    --color-badge-bronze: linear-gradient(135deg, #CD7F32 0%, #DAA520 100%);
+    --color-badge-silver: linear-gradient(135deg, #C0C0C0 0%, #E5E4E2 100%);
+    --color-badge-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    --color-badge-platinum: linear-gradient(135deg, #E5E4E2 0%, #B4B4B4 100%);
+    --color-badge-text-light: #FFFFFF;
+    --color-badge-text-dark: #333333;
   }
 
   .dark {
@@ -839,10 +849,10 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: var(--color-text-primary);
-    font-size: var(--font-size-subhead);
+    font-size: var(--font-size-footnote);
     font-weight: 600;
     padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     z-index: 2;
     text-transform: uppercase;
     letter-spacing: 0.05em;

@@ -3,9 +3,6 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Studio Emara • Aujourd'hui">
-  <!-- ===== NOTCH AREA ===== -->
-  <div class="today-notch-area"></div>
-  
   <div class="today-page">
     <!-- ===== HEADER SECTION ===== -->
     <header class="today-header">
@@ -162,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- Studio A - Premium -->
         <div class="today-studio-featured today-animate-stagger-2">
-          <div class="today-studio-featured-card">
+          <div class="today-studio-featured-card today-studio-featured-card-popular">
             <div class="today-studio-featured-image">
               <img 
                 src="/studio-a-bg.webp" 
@@ -176,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Plus grand
+                Photos
               </button>
             </div>
             
@@ -203,7 +200,7 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- Studio B - Professionnel -->
         <div class="today-studio-featured today-animate-stagger-3">
-          <div class="today-studio-featured-card">
+          <div class="today-studio-featured-card today-studio-featured-card-popular">
             <div class="today-studio-featured-image">
               <img 
                 src="/studio-b-bg.avif" 
@@ -215,7 +212,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Plus grand
+                Photos
               </button>
             </div>
             
@@ -256,7 +253,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Plus grand
+                Photos
               </button>
             </div>
             
@@ -297,7 +294,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Plus grand
+                Photos
               </button>
             </div>
             
@@ -562,11 +559,13 @@ import Layout from '../layouts/Layout.astro';
         <div class="space-y-6">
           
           <!-- Mix-Mastering Card -->
-          <div class="today-card today-animate-stagger-5">
+          <div class="today-card today-card-popular today-animate-stagger-5">
             <div class="today-card-content">
               <div class="flex items-center justify-between">
                 <div class="flex-1 pr-6">
-                  <h3 class="today-card-title">MIX-MASTERING</h3>
+                  <div class="flex items-center gap-3 mb-2">
+                    <h3 class="today-card-title">MIX-MASTERING</h3>
+                  </div>
                   <p class="text-sm text-gray-600">145€ / TITRE • Qualité professionnelle prête à la diffusion.</p>
                   <p class="text-xs text-gray-500">Services inclus</p>
                 </div>
